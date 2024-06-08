@@ -1,0 +1,115 @@
+
+<!-- Header Here -->
+<header class="header-section">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="logo-menu">
+{#                <a href="index.html" class="logo"> "style="text-decoration: none; list-style-type: none"#}
+                    <img src="../../static/assets/img/logo/footer-logo.png" alt="logo">
+                </a>
+
+            </div>
+            <ul class="main-menu">
+                <li>
+                    <a href="#0">
+                        Home
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="subtwohober">
+                            <a href="{% url 'index' %}">Home One</a>
+                        </li>
+{#                        <li class="subtwohober">#}
+{#                            <a href="{% url 'index' %}">Home two</a>#}
+{#                        </li>#}
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">
+                        about us
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        Classes
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="subtwohober">
+                            <a href="{% url 'classes' %}">our classes</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+
+                    <ul class="sub-menu">
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">
+                        trainners
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu">
+{#                        <li class="subtwohober">#}
+{#                            <a href="{% url 'trainer' %}">our trainner</a>#}
+{#                        </li>#}
+                        <li class="subtwohober">
+                            <a href="{% url 'trainner_details' %}">tarinner details</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">
+                        shop
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="subtwohober">
+                            <a href="{% url 'shop' %}">shop page</a>
+                        </li>
+
+                        <li class="subtwohober">
+                            <a href="{% url 'shop_single' %}">single product</a>
+                        </li>
+                        <li class="subtwohober">
+                            <a href="{% url 'shop-cart' %}">cart page</a>
+                        </li>
+                        <li class="subtwohober">
+                            <a href="{% url 'checkout' %}">checkout</a>
+                        </li>
+                        <li class="subtwohober">
+                            <a href="{% url 'successful' %}">successful</a>
+                        </li>
+                        <li class="subtwohober">
+
+                            <a href="{% url 'testimonial' %}">Testimonial</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+
+                    </ul>
+                </li>
+            </ul>
+            <div class="menu__right__components d-flex align-items-center">
+                <div class="menu__components">
+{#                    <a href="#0" class="search-trigger search-icon"><i class="fa-solid fa-search"></i></a>#}
+                    <div class="tolly__shop">
+                    <a href="{% url 'shop' %}">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                   </a>
+                    </div>
+                </div>
+                <div class="header-bar d-lg-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header End -->

@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="NextGenerationDev">
+   <title>Salud - Fitness & Gym HTML Template</title>
+   <!--Favicon img-->
+   <link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.png">
+   <!--Bootstarp min css-->
+   <link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+   <!--Bootstarp map css-->
+   <link rel="stylesheet" href="../../static/assets/css/bootstrap.css.map">
+   <!--Odometer css-->
+   <link rel="stylesheet" href="../../static/assets/css/odometer.css">
+   <!--Owl Carousel css-->
+   <link rel="stylesheet" href="../../static/assets/css/owl.min.css">
+   <!--Owl Carousel Theme css-->
+   <link rel="stylesheet" href="../../static/assets/css/owl.theme.default.min.css">
+   <!--All min css-->
+   <link rel="stylesheet" href="../../static/assets/css/all.min.css">
+   <!--Animate css-->
+   <link rel="stylesheet" href="../../static/assets/css/animate.css">
+   <!--Popup css-->
+   <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
+   <!--Swiper min css-->
+   <link rel="stylesheet" href="../../static/assets/css/swiper-bundle.min.css">
+   <!--Owl Nice select css-->
+   <link rel="stylesheet" href="../../static/assets/css/nice-select.css">
+   <!--main css-->
+   <link rel="stylesheet" href="../../static/assets/css/main.css">
+</head>
+<body>
+
+<!--==== Scrool Top Bottom Here ======= -->
+<div id="progress">
+    <span id="valiu"><i class="fa-solid fa-angles-up"></i></span>
+</div>
+<!--==== Scrool Top Bottom End ======= -->
+
+<!-- Header Here -->
+    {% include 'base/header.html' %}
+<!-- Header End -->
+
+<!--=========== Breadcumd Section Here ========= -->
+<section class="breadcumd__banner about__bg">
+    <div class="container">
+       <div class="breadcumd__wrapper">
+          <h2 class="left__content wow fadeInUp" data-wow-duration="3s">
+             About us
+          </h2>
+          <ul class="right__content wow fadeInUp" data-wow-duration="3s">
+             <li>
+                <a href="{% url 'index' %}">
+                   Home
+                </a>
+             </li>
+             <li>
+                <i class="fa-solid fa-chevron-right"></i>
+             </li>
+             <li>
+                About
+             </li>
+          </ul>
+       </div>
+    </div>
+</section>
+<!--=========== Breadcumd Section End ========= -->
+
+<!--==== About Section Here ======= -->
+<section class="about__section pt-120 pb-120">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-xl-4">
+                <div class="about__thumb wow fadeInDown" data-wow-duration="2s">
+                    <img src="../../static/assets/img/about/trainer.jpg" alt="about-image">
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="about__header">
+                    <h6>
+                        Know About Us
+                    </h6>
+                    <div class="witr_bar_main">
+                        <div class="witr_bar_inner witr_bar_innerc">
+                        </div>
+                    </div>
+                    <h2 class="wow fadeInUp" data-wow-duration="2s">
+                        PERSONAL <span>TRAININGS</span> <br>
+                        ANYWHERE.
+                    </h2>
+                </div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-7">
+                        <div class="text wow fadeInDown" data-wow-duration="2s">
+                            <p>
+                                The word gym is a shortened form of gymnasium originally a Latin word meaning school for gymnastics from the Greek gymnasion public place where exercises are practiced.
+                            </p>
+                        </div>
+                        <ul class="wow fadeInDown" data-wow-duration="2s">
+                            <li>We find your trainer.</li>
+                            <li>We make your plan.</li>
+                            <li>Take training anywhere.</li>
+                        </ul>
+                        <div class="about__button mt-3 wow fadeInUp" data-wow-duration="3s">
+                            <a href="#0" class="cmn--btn">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="right__thumb wow fadeInUp" data-wow-duration="2s">
+                            <img src="../../static/assets/img/about/trainer2.jpg" alt="about-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==== About Section End ======= -->
+
+<!--=========== Counter Section Start ========= -->
+<section class="counter__section pt-120 pb-120">
+    <div class="container">
+       <div class="main__counter__wrapper">
+          <div class="counter__items odometer__item wow fadeInDown" data-wow-delay="0.1s">
+             <div class="counter__content">
+                <div class="icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="cont d-flex align-items-center">
+                   <h2 class="odometer" data-odometer-final="1177">
+                      0
+                   </h2>
+                </div>
+                <p>
+                    Working Hours
+                </p>
+             </div>
+          </div>
+          <div class="counter__items odometer__item wow fadeInDown" data-wow-delay="0.4s">
+             <div class="counter__content">
+                <div class="icon">
+                    <i class="fa-sharp fa-solid fa-heart"></i>
+                </div>
+                <div class="cont d-flex align__items__center">
+                   <h2 class="odometer" data-odometer-final="1919">
+                      0
+                   </h2>
+                </div>
+                <p>
+                  happy clients
+                </p>
+             </div>
+          </div>
+          <div class="counter__items odometer__item wow fadeInDown" data-wow-delay="0.6s">
+             <div class="counter__content">
+                <div class="icon">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+                <div class="cont d-flex align-items-center">
+                   <h2 class="odometer" data-odometer-final="712">
+                      0
+                   </h2>
+                </div>
+                <p>
+                    Success Stories
+                </p>
+             </div>
+          </div>
+          <div class="counter__items odometer__item wow fadeInDown" data-wow-delay="0.9s">
+             <div class="counter__content">
+                <div class="icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <div class="cont d-flex align-items__center">
+                   <h2 class="odometer" data-odometer-final="991">
+                      0
+                   </h2>
+                </div>
+                <p>
+                    PerfectBodies
+                </p>
+             </div>
+          </div>
+       </div>
+    </div>
+</section>
+<!--=========== Counter Section End ========= -->
+
+<!--==== choose Section Here ======= -->
+<section class="choose__section pt-120 pb-120">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="image img">
+                    <div class="swiper choose__slide__one">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/choose/slider-1.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/choose/slider-2.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/choose/slider-3.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/choose/slider-4.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/choose/slider-5.jpg" alt="swiper__image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 swiper choose__slide__two">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/choose/small-1.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/choose/small-2.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/choose/small-3.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/choose/small-4.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/choose/small-5.jpg" alt="swiper__image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="choose__items">
+                    <div class="choose__header">
+                        <h6>
+                            why choose Us
+                        </h6>
+                        <div class="witr_bar_main">
+                            <div class="witr_bar_inner witr_bar_innerc">
+                            </div>
+                        </div>
+                        <h2 class="wow fadeInUp" data-wow-duration="2s">
+                            Welcome To Our Fitness Gym
+                        </h2>
+                    </div>
+                    <div class="choose__wrap d-flex align-items-center mt-4 pb-4 wow fadeInDown" data-wow-duration="3s">
+                        <div class="choose__icon mr__15">
+                            <img src="../../static/assets/img/choose/icon1.png" alt="choose__icon">
+                        </div>
+                        <div class="choose__content">
+                            <h5>Free Fitness Training</h5>
+                            <p>look even slightly believable.</p>
+                        </div>
+                    </div>
+                    <div class="choose__wrap d-flex align-items-center mt-3 pb-4 wow fadeInDown" data-wow-duration="4s">
+                        <div class="choose__icon mr__15">
+                            <img src="../../static/assets/img/choose/icon2.png" alt="choose__icon">
+                        </div>
+                        <div class="choose__content">
+                            <h5>Cardio and Strength</h5>
+                            <p>look even slightly believable.</p>
+                        </div>
+                    </div>
+                    <div class="choose__wrap d-flex align-items-center mt-3 wow fadeInDown" data-wow-duration="5s">
+                        <div class="choose__icon mr__15">
+                            <img src="../../static/assets/img/choose/icon3.png" alt="choose__icon">
+                        </div>
+                        <div class="choose__content">
+                            <h5>Boot and Camp</h5>
+                            <p>look even slightly believable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==== choose Section End ======= -->
+
+<!--==== Discount Section Here ======= -->
+<section class="discount__section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="discount__items">
+                    <div class="discount__content">
+                        <h3 class="wow fadeInUp" data-wow-duration="2s">fitness Classes This Summer</h3>
+                        <h5>Pay Now And Get <span>30% Discount!</span></h5>
+                        <p class="wow fadeInDown" data-wow-duration="2s">
+                            Alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.
+                        </p>
+                        <a href="#" class="cmn--btn mt-4 wow fadeInUp" data-wow-duration="3s">book now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==== Discount Section End ======= -->
+
+<!--==== choose Section Here ======= -->
+<section class="choose__section pt-120 pb-120">
+    <div class="container">
+        <div class="row g-4 justify-content-between">
+            <div class="col-xl-5 col-lg-6">
+                <div class="choose__items">
+                    <div class="choose__header">
+                        <h2 class="wow fadeInUp" data-wow-duration="2s">
+                            RUN FAST LIKE
+                            THE WOLVES
+                        </h2>
+                    </div>
+                    <div class="progressbar-wrap">
+                        <div class="progress-element progress-element--html wow fadeInLeft" data-wow-duration="3s">
+                            <h6>IMMUNE</h6>
+                            <div class="main-progress">
+                                <div class="progress-container">
+                                    <span class="main-scale main-scle2"></span>
+                                </div>
+                                <h6 class="pro-count">75%</h6>
+                            </div>
+                        </div>
+                        <div class="progress-element progress-element--javascript wow fadeInLeft" data-wow-duration="4s">
+                            <h6>HEART & ENERGY</h6>
+                            <div class="main-progress">
+                                <div class="progress-container">
+                                    <span class="main-scale"></span>
+                                </div>
+                                <h6 class="pro-count">90%</h6>
+                            </div>
+                        </div>
+                        <div class="progress-element progress-element--javascript wow fadeInLeft" data-wow-duration="5s">
+                            <h6>JOINTS & BONES</h6>
+                            <div class="main-progress">
+                                <div class="progress-container">
+                                    <span class="main-scale"></span>
+                                </div>
+                                <h6 class="pro-count">70%</h6>
+                            </div>
+                        </div>
+                        <div class="progress-element progress-element--javascript mb-4 wow fadeInLeft" data-wow-duration="6s">
+                            <h6>SKIN</h6>
+                            <div class="main-progress">
+                                <div class="progress-container">
+                                    <span class="main-scale"></span>
+                                </div>
+                                <h6 class="pro-count">83%</h6>
+                            </div>
+                        </div>
+                        <a href="#0" class="cmn--btn wow fadeInUp" data-wow-duration="3s">contact us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 wow fadeInRight" data-wow-duration="3s">
+                <div class="about-thumb">
+                    <img src="../../static/assets/img/about.png" alt="about-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==== choose Section End ======= -->
+
+<!--==== Testimonial Section Here ======= -->
+<section class="testimonial__section style__two pt-120 pb-120">
+    <div class="container">
+        <div class="section__header section__center wow fadeInUp" data-wow-duration="2s">
+            <h5>testimonial</h5>
+            <div class="witr_bar_main">
+                <div class="witr_bar_inner witr_bar_innerc">
+                </div>
+            </div>
+            <h2 class="section__title">
+                What's client says
+            </h2>
+        </div>
+        <div class="swiper testimonial__wrapper__two">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testi__items">
+                        <div class="testi__wrap">
+                            <div class="testi__thumb">
+                                <img src="../../static/assets/img/testimonial/client1.jpg" alt="testi__image">
+                            </div>
+                            <div class="content">
+                                <h6>
+                                    James Lucas
+                                </h6>
+                                <span>client</span>
+                            </div>
+                        </div>
+                        <p>
+                            Large clean and spacious facility that has all the necessary equipment for their fitness routine.
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi__items">
+                        <div class="testi__wrap">
+                            <div class="testi__thumb">
+                                <img src="../../static/assets/img/testimonial/client2.jpg" alt="testi__image">
+                            </div>
+                            <div class="content">
+                                <h6>
+                                    Ava Amelia
+                                </h6>
+                                <span>client</span>
+                            </div>
+                        </div>
+                        <p>
+                            Large clean and spacious facility that has all the necessary equipment for their fitness routine.
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi__items">
+                        <div class="testi__wrap">
+                            <div class="testi__thumb">
+                                <img src="../../static/assets/img/testimonial/client3.jpg" alt="testi__image">
+                            </div>
+                            <div class="content">
+                                <h6>
+                                    James Henry
+                                </h6>
+                                <span>client</span>
+                            </div>
+                        </div>
+                        <p>
+                            Large clean and spacious facility that has all the necessary equipment for their fitness routine.
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-dot text-center pt-5">
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==== Testimonial Section End ======= -->
+
+<!--=========== Logo Section Here ========= -->
+<div class="logo-section pb-120 pt-120">
+    <div class="container">
+       <div class="logo-wrapper owl-carousel owl-theme">
+          <div class="logo-thumb wow fadeInDown" data-wow-duration="2s">
+             <img src="../../static/assets/img/logo/logo1.png" alt="logo-image">
+          </div>
+          <div class="logo-thumb wow fadeInUp" data-wow-duration="3s">
+            <img src="../../static/assets/img/logo/logo2.png" alt="logo-image">
+          </div>
+          <div class="logo-thumb wow fadeInDown" data-wow-duration="3s">
+            <img src="../../static/assets/img/logo/logo3.png" alt="logo-image">
+          </div>
+          <div class="logo-thumb wow fadeInUp" data-wow-duration="4s">
+            <img src="../../static/assets/img/logo/logo4.png" alt="logo-image">
+          </div>
+          <div class="logo-thumb wow fadeInDown" data-wow-duration="4s">
+            <img src="../../static/assets/img/logo/logo5.png" alt="logo-image">
+          </div>
+          <div class="logo-thumb wow fadeInUp" data-wow-duration="5s">
+            <img src="../../static/assets/img/logo/logo6.png" alt="logo-image">
+          </div>
+       </div>
+    </div>
+</div>
+<!--=========== Logo Section End ========= -->
+
+<!--=========== Newsletter Section Here ========= -->
+<section class="newsletter__section">
+    <div class="container">
+        <div class="newsletter__wrapper">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">
+                        <div class="section__header section__center">
+                            <h2>
+                                Subscribe Here
+                            </h2>
+                            <p>
+                                Subscribe to get notified about new templates and updates
+                            </p>
+                        </div>
+                        <form action="#">
+                            <input type="email" placeholder="Enter your email address">
+                            <button class="cmn--btn" type="submit">
+                                <span>
+                                  Subscribe
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=========== Newsletter Section End ========= -->
+
+<!--=========== Footer Section Here ========= -->
+    {% include 'base/footer.html' %}
+<!--=========== Footer Section End ========= -->
+
+  
+
+
+   <!--Jquery 3 6 0 Min Js-->
+   <script src="../../static/assets/js/jquery-3.7.1.min.js"></script>
+   <!--Bootstrap bundle min Js-->
+   <script src="../../static/assets/js/bootstrap.bundle.min.js"></script>
+   <!--Viewport Jquery Js-->
+   <script src="../../static/assets/js/viewport.jquery.js"></script>
+   <!--Wow min Js-->
+   <script src="../../static/assets/js/wow.min.js"></script>
+   <!--Odometer Up min Js-->
+   <script src="../../static/assets/js/odometer.min.js"></script>
+   <!--Owl Carousel min Js-->
+   <script src="../../static/assets/js/owl.min.js"></script>
+   <!--Popup min Js-->
+   <script src="../../static/assets/js/jquery.magnific-popup.min.js"></script>
+   <!--Owl nice Jquery min Js-->
+   <script src="../../static/assets/js/jquery.nice-select.min.js"></script>
+   <!--Swiper min Js-->
+   <script src="../../static/assets/js/swiper-bundle.min.js"></script>
+   <!--main Js-->
+   <script src="../../static/assets/js/main.js"></script>
+</body>
+</html>

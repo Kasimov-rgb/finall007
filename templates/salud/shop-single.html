@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="NextGenerationDev">
+   <title>Salud - Fitness & Gym HTML Template</title>
+   <!--Favicon img-->
+   <link rel="shortcut icon" href="{% static '/assets/img/favicon/favicon.png' %}">
+   <!--Bootstarp min css-->
+   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}">
+   <!--Bootstarp map css-->
+   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
+   <!--Odometer css-->
+   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
+   <!--Owl Carousel css-->
+   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
+   <!--Owl Carousel Theme css-->
+   <link rel="stylesheet" href="{% static '/assets/css/owl.theme.default.min.css' %}">
+   <!--All min css-->
+   <link rel="stylesheet" href="{% static '/assets/css/all.min.css' %}">
+   <!--Animate css-->
+   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
+   <!--Popup css-->
+   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
+   <!--Swiper min css-->
+   <link rel="stylesheet" href="{% static '/assets/css/swiper-bundle.min.css' %}">
+   <!--Owl Nice select css-->
+   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}">
+   <!--main css-->
+   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
+</head>
+<body>
+
+<!--==== Scrool Top Bottom Here ======= -->
+<div id="progress">
+    <span id="valiu"><i class="fa-solid fa-angles-up"></i></span>
+</div>
+<!--==== Scrool Top Bottom End ======= -->
+
+<!-- Header Here -->
+{% include 'base/header.html' %}
+<!-- Header End -->
+
+<!--=========== Breadcumd Section Here ========= -->
+<section class="breadcumd__banner banner__image classes__bg">
+    <div class="container">
+       <div class="breadcumd__wrapper">
+          <h2 class="left__content wow fadeInUp"data-wow-duration="3s">
+            Single Product
+          </h2>
+          <ul class="right__content wow fadeInUp"data-wow-duration="3s">
+             <li>
+                <a href="index.html">
+                   Home
+                </a>
+             </li>
+             <li>
+                <i class="fa-solid fa-chevron-right"></i>
+             </li>
+             <li>
+                Single Product
+             </li>
+          </ul>
+       </div>
+    </div>
+</section>
+<!--=========== Breadcumd Section End ========= -->
+
+<!--=========== Shop Single Section Here ========= -->
+<section class="shop__single pt-80 pb-80">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-xxl-5 col-xl-5 col-lg-5">
+                <div class="image img">
+                    <div class="swiper choose__slide__one">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/product/1.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/product/2.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/product/3.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/product/4.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../static/assets/img/product/5.jpg" alt="swiper__image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 swiper choose__slide__two">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/product/single/s1.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/product/single/s2.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/product/single/s3.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/product/single/s4.jpg" alt="swiper__image">
+                            </div>
+                            <div class="swiper-slide slide__smoll">
+                                <img src="../../static/assets/img/product/single/s5.jpg" alt="swiper__image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-7 col-xl-7 col-lg-7">
+                <div class="shop__single__content">
+                    <h3 class=" wow fadeInDown"data-wow-duration="3s">
+                        Elliptical trainer
+                    </h3>
+                    <div class="describtion__reviews wow fadeInRight"data-wow-duration="3s">
+                       <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false" tabindex="-1">
+                             Describtion
+                          </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">
+                             Reviews
+                          </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="describtion">
+                          <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                             <p class="describtion__text">
+                                Amazing facility, top equipment and great environment. Good service with friendly staff and super clean and comfortable gym for everyone from beginners to Talk about your experience in the workplace and mention any questions or concerns you may have about day-to-day tasks. Employers often appreciate insight into individual employee experiences so they can adjust their expectations and goals to better fit their needs professional athletes to train at. I will definitely be returning on my next trip to Samui........
+                             </p>
+                          </div>
+                          <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                             <div class="reviews__boxes flex-wrap">
+                                <div class="thumb__review">
+                                   <img src="../../static/assets/img/product/single/c1.jpg" alt="img">
+                                </div>
+                                <div class="review-content">
+                                   <div class="name__ratting">
+                                      <span class="name">
+                                        Jonshon Hume
+                                      </span>
+                                      <span class="time">
+                                         2 days ago
+                                      </span>
+                                      <div class="ratting">
+                                         <span>
+                                            <i class="fa-solid fa-star"></i>
+                                         </span>
+                                         <span>
+                                            <i class="fa-solid fa-star"></i>
+                                         </span>
+                                         <span>
+                                            <i class="fa-solid fa-star"></i>
+                                         </span>
+                                         <span>
+                                            <i class="fa-solid fa-star"></i>
+                                         </span>
+                                         <span>
+                                            <i class="fa-solid fa-star"></i>
+                                         </span>
+                                      </div>
+                                   </div>
+                                   <p>
+                                    Amazing facility, top equipment and great environment. Good service with friendly staff and super clean and comfortable gym for everyone from beginners to Talk about your experience in the workplace.........
+                                   </p>
+                                   <a href="single-product.html" class="view__btn">
+                                      <span>
+                                         View More 
+                                      </span>
+                                      <span class="icon">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                      </span>
+                                   </a>
+                                </div>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="product-description__content-footer wow fadeInUp"data-wow-duration="3s">
+                       <div class="product-pricing">                          
+                           <div class="product-pricing-single product-pricing-calculator">
+                               <span class="cart-decre">
+                                <i class="fa-solid fa-minus"></i>
+                                </span>
+                               <span class="product-quant">0</span>
+                               <span class="cart-incre">
+                                <i class="fa-solid fa-plus"></i>
+                             </span>
+                           </div>
+                           <div class="product-pricing-single">
+                               <p>$ <span class="product-pri">0.00</span></p>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=========== Shop Single Section End ========= -->
+
+<!--=========== Review Section Here ========= -->
+<section class="review__section pt-120 pb-120">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xl-6 col-lg-6">
+               <div class="female__review">
+                  <div class="write__review__wrap">
+                     <h3 class="title wow fadeInDown"data-wow-duration="3s">
+                        Write a Review
+                     </h3>
+                     <form action="#0">
+                        <div class="row g-4">
+                           <div class="col-lg-6 wow fadeInLeft"data-wow-duration="3s">
+                              <input type="text" placeholder="Enter Your Name...">
+                           </div>
+                           <div class="col-lg-6 wow fadeInRight"data-wow-duration="3s">
+                              <input type="email" placeholder="Enter Your Email...">
+                           </div>
+                           <div class="col-lg-12 wow fadeInUp"data-wow-duration="3s">
+                              <div class="form__star">
+                                 <a href="#0">
+                                    <i class="fa-solid fa-star"></i>
+                                 </a>
+                                 <a href="#0">
+                                    <i class="fa-solid fa-star"></i>
+                                 </a>
+                                 <a href="#0">
+                                    <i class="fa-solid fa-star"></i>
+                                 </a>
+                                 <a href="#0">
+                                    <i class="fa-solid fa-star"></i>
+                                 </a>
+                                 <a href="#0">
+                                    <i class="fa-solid fa-star"></i>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="col-lg-12 wow fadeInDown"data-wow-duration="3s">
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"> Write a reviews...</textarea>
+                           </div>
+                           <button type="submit" class="cmn--btn wow fadeInUp"data-wow-duration="3s"> 
+                              <span>
+                                 Submit now
+                              </span>
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 wow fadeInRight"data-wow-duration="3s">
+               <div class="female__img">
+                  <img src="../../static/assets/img/product/2.jpg" alt="shop">
+               </div>
+            </div>
+         </div>
+    </div>
+</section>
+<!--=========== Review Section End ========= -->
+
+<!--==== Product Section Here ======= -->
+<section class="product__section pt-120 pb-120">
+    <div class="container">
+        <h3 class="title mb-4 wow fadeInDown"data-wow-duration="3s">
+           More Products
+         </h3>
+        <div class="row g-4">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInUp"data-wow-duration="3s">
+                <div class="product__items">
+                    <div class="product__thumb">
+                        <img src="../../static/assets/img/product/1.jpg" alt="product__image">
+                    </div>
+                    <div class="product__content center">
+                        <h5>
+                            <a href="#0">
+                                Elliptical trainer
+                            </a>
+                        </h5>
+                          <div class="product__price d-flex align-items-center justify-content-center">
+                            <del>
+                                $350.00
+                            </del>
+                            <h6>
+                                $230.00
+                            </h6>
+                        </div>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                    </div>
+                    <div class="product__btn center">
+                        <a href="shop-single.html" class="cmn--button">
+                           Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInUp"data-wow-duration="5s">
+                <div class="product__items">
+                    <div class="product__thumb">
+                        <img src="../../static/assets/img/product/2.jpg" alt="product__image">
+                    </div>
+                    <div class="product__content center">
+                        <h5>
+                            <a href="#0">
+                                Medicine ball
+                            </a>
+                        </h5>
+                          <div class="product__price d-flex align-items-center justify-content-center">
+                            <del>
+                                $350.00
+                            </del>
+                            <h6>
+                                $230.00
+                            </h6>
+                        </div>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                    </div>
+                    <div class="product__btn center">
+                        <a href="shop-single.html" class="cmn--button">
+                           Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInUp"data-wow-duration="7s">
+                <div class="product__items">
+                    <div class="product__thumb">
+                        <img src="../../static/assets/img/product/3.jpg" alt="product__image">
+                    </div>
+                    <div class="product__content center">
+                        <h5>
+                            <a href="#0">
+                                Weight plate
+                            </a>
+                        </h5>
+                          <div class="product__price d-flex align-items-center justify-content-center">
+                            <del>
+                                $350.00
+                            </del>
+                            <h6>
+                                $230.00
+                            </h6>
+                        </div>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                    </div>
+                    <div class="product__btn center">
+                        <a href="shop-single.html" class="cmn--button">
+                           Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==== Product Section End ======= -->
+
+<!--=========== Newsletter Section Here ========= -->
+<section class="newsletter__section">
+    <div class="container">
+        <div class="newsletter__wrapper">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">
+                        <div class="section__header section__center">
+                            <h2>
+                                Subscribe Here
+                            </h2>
+                            <p>
+                                Subscribe to get notified about new templates and updates
+                            </p>
+                        </div>
+                        <form action="#">
+                            <input type="email" placeholder="Enter your email address">
+                            <button class="cmn--btn" type="submit">
+                                <span>
+                                  Subscribe
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=========== Newsletter Section End ========= -->
+
+<!--=========== Footer Section Here ========= -->
+{% include 'base/footer.html' %}
+<!--=========== Footer Section End ========= -->
+
+  
+
+
+   <!--Jquery 3 6 0 Min Js-->
+   <script src="{% static '/assets/js/jquery-3.7.1.min.js' %}"></script>
+   <!--Bootstrap bundle min Js-->
+   <script src="{% static '/assets/js/bootstrap.bundle.min.js' %}"></script>
+   <!--Viewport Jquery Js-->
+   <script src="{% static '/assets/js/viewport.jquery.js' %}"></script>
+   <!--Wow min Js-->
+   <script src="{% static '/assets/js/wow.min.js' %}"></script>
+   <!--Odometer Up min Js-->
+   <script src="{% static '/assets/js/odometer.min.js' %}"></script>
+   <!--Owl Carousel min Js-->
+   <script src="{% static '/assets/js/owl.min.js' %}"></script>
+   <!--Popup min Js-->
+   <script src="{% static '/assets/js/jquery.magnific-popup.min.js' %}"></script>
+   <!--Owl nice Jquery min Js-->
+   <script src="{% static '/assets/js/jquery.nice-select.min.js' %}"></script>
+   <!--Swiper min Js-->
+   <script src="{% static '/assets/js/swiper-bundle.min.js' %}"></script>
+   <!--main Js-->
+   <script src="{% static '/assets/js/main.js' %}"></script>
+</body>
+</html>
