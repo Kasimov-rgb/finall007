@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -7,29 +9,29 @@
    <meta name="author" content="NextGenerationDev">
    <title>Salud - Fitness & Gym HTML Template</title>
    <!--Favicon img-->
-   <link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.png">
+   <link rel="shortcut icon" href="{% static '/assets/img/favicon/favicon.png' %}">
    <!--Bootstarp min css-->
-   <link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}">
    <!--Bootstarp map css-->
-   <link rel="stylesheet" href="../../static/assets/css/bootstrap.css.map">
+   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
    <!--Odometer css-->
-   <link rel="stylesheet" href="../../static/assets/css/odometer.css">
+   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
    <!--Owl Carousel css-->
-   <link rel="stylesheet" href="../../static/assets/css/owl.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
    <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="../../static/assets/css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/owl.theme.default.min.css' %}">
    <!--All min css-->
-   <link rel="stylesheet" href="../../static/assets/css/all.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/all.min.css' %}">
    <!--Animate css-->
-   <link rel="stylesheet" href="../../static/assets/css/animate.css">
+   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
    <!--Popup css-->
-   <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
    <!--Swiper min css-->
-   <link rel="stylesheet" href="../../static/assets/css/swiper-bundle.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/swiper-bundle.min.css' %}">
    <!--Owl Nice select css-->
-   <link rel="stylesheet" href="../../static/assets/css/nice-select.css">
+   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}">
    <!--main css-->
-   <link rel="stylesheet" href="../../static/assets/css/main.css">
+   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
 </head>
 <body>
 
@@ -72,271 +74,92 @@
 <section class="classes__section classes__style__two">
     <div class="container">
         <div class="row g-4">
+            {% for course in classes %}
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.3s">
                 <div class="classes__items">
                     <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes7.jpg" alt="classes-image">
+                        {% if course.image_for_classes %}
+                            <img src="{{ course.image_for_classes.url }}" alt="classes-image">
+                        {% else %}
+                            <img src="/path/to/default/image.jpg" alt="default-image">
+                        {% endif %}
                         <div class="class__price">
                             <h5>$27</h5>
-                        </div>   
+                        </div>
                     </div>
                     <div class="classes__wrap">
                         <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                cycling & cardio
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
+                            <h5><a href="#0">{{ course.title }}</a></h5>
+                            <p>{{ course.description }}</p>
+{#                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>#}
                         </div>
+                        <div class="classes__content"> <h6><a href="#0">{{ course.instructor }}</a></h6></div>
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.5s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes4.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$39</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                yoga
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.7s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes5.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$43</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                Meditation
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.7s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes6.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$49</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                Martial Arts
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.5s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes7.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$27</h5>
-                        </div>   
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                cycling & cardio
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.3s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes4.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$39</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                yoga
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.3s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes5.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$43</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                Meditation
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.5s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes6.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$49</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                Martial Arts
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.7s">
-                <div class="classes__items">
-                    <div class="classes__thumb">
-                        <img src="../../static/assets/img/classes/classes4.jpg" alt="classes-image">
-                        <div class="class__price">
-                            <h5>$39</h5>
-                        </div>    
-                    </div>
-                    <div class="classes__wrap">
-                        <div class="classes__content">
-                            <h5>
-                               <a href="#0">
-                                yoga
-                               </a>
-                            </h5>
-                            <p>
-                                Large clean and spacious facility that has all the necessary equipment facility that has for their fitness routine.
-                            </p>
-                            <a href="#0" class="cmn--button">read more <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <ul class="default__pagination pt-40 wow fadeInUp" data-wow-duration="3s">
-            <li>
-               <a href="#"><i class="fa-solid fa-angle-left"></i></a>
-            </li>
-            <li>
-               <a href="#">1</a>
-            </li>
-            <li>
-               <a href="#">2</a>
-            </li>
-            <li>
-               <a href="#">3</a>
-            </li>
-               <li>
-                  <a href="#">4</a>
-            </li>
-            <li>
-               <a href="#">5</a>
-               </li>
-            <li>
-               <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-            </li>
-        </ul>
     </div>
+</section>
+
+{#        </div>#}
+{#        <ul class="default__pagination pt-40 wow fadeInUp" data-wow-duration="3s">#}
+{#            <li>#}
+{#               <a href="#"><i class="fa-solid fa-angle-left"></i></a>#}
+{#            </li>#}
+{#            <li>#}
+{#               <a href="#">1</a>#}
+{#            </li>#}
+{#            <li>#}
+{#               <a href="#">2</a>#}
+{#            </li>#}
+{#            <li>#}
+{#               <a href="#">3</a>#}
+{#            </li>#}
+{#               <li>#}
+{#                  <a href="#">4</a>#}
+{#            </li>#}
+{#            <li>#}
+{#               <a href="#">5</a>#}
+{#               </li>#}
+{#            <li>#}
+{#               <a href="#"><i class="fa-solid fa-angle-right"></i></a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
 </section>
 <!--==== Classes Section End ======= -->
 
-<!--=========== Newsletter Section Here ========= -->
-<section class="newsletter__section">
-    <div class="container">
-        <div class="newsletter__wrapper">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">
-                        <div class="section__header section__center">
-                            <h2>
-                                Subscribe Here
-                            </h2>
-                            <p>
-                                Subscribe to get notified about new templates and updates
-                            </p>
-                        </div>
-                        <form action="#">
-                            <input type="email" placeholder="Enter your email address">
-                            <button class="cmn--btn" type="submit">
-                                <span>
-                                  Subscribe
-                                </span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--=========== Newsletter Section End ========= -->
+{#<!--=========== Newsletter Section Here ========= -->#}
+{#<section class="newsletter__section">#}
+{#    <div class="container">#}
+{#        <div class="newsletter__wrapper">#}
+{#            <div class="row justify-content-center">#}
+{#                <div class="col-lg-6">#}
+{#                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">#}
+{#                        <div class="section__header section__center">#}
+{#                            <h2>#}
+{#                                Subscribe Here#}
+{#                            </h2>#}
+{#                            <p>#}
+{#                                Subscribe to get notified about new templates and updates#}
+{#                            </p>#}
+{#                        </div>#}
+{#                        <form action="#">#}
+{#                            <input type="email" placeholder="Enter your email address">#}
+{#                            <button class="cmn--btn" type="submit">#}
+{#                                <span>#}
+{#                                  Subscribe#}
+{#                                </span>#}
+{#                            </button>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{#<!--=========== Newsletter Section End ========= -->#}
 
 <!--=========== Footer Section Here ========= -->
     {% include 'base/footer.html' %}
@@ -346,24 +169,24 @@
 
 
    <!--Jquery 3 6 0 Min Js-->
-   <script src="../../static/assets/js/jquery-3.7.1.min.js"></script>
+   <script src="{% static '/assets/js/jquery-3.7.1.min.js' %}"></script>
    <!--Bootstrap bundle min Js-->
-   <script src="../../static/assets/js/bootstrap.bundle.min.js"></script>
+   <script src="{% static '/assets/js/bootstrap.bundle.min.js' %}"></script>
    <!--Viewport Jquery Js-->
-   <script src="../../static/assets/js/viewport.jquery.js"></script>
+   <script src="{% static '/assets/js/viewport.jquery.js' %}"></script>
    <!--Wow min Js-->
-   <script src="../../static/assets/js/wow.min.js"></script>
+   <script src="{% static '/assets/js/wow.min.js' %}"></script>
    <!--Odometer Up min Js-->
-   <script src="../../static/assets/js/odometer.min.js"></script>
+   <script src="{% static '/assets/js/odometer.min.js' %}"></script>
    <!--Owl Carousel min Js-->
-   <script src="../../static/assets/js/owl.min.js"></script>
+   <script src="{% static '/assets/js/owl.min.js' %}"></script>
    <!--Popup min Js-->
-   <script src="../../static/assets/js/jquery.magnific-popup.min.js"></script>
+   <script src="{% static '/assets/js/jquery.magnific-popup.min.js' %}"></script>
    <!--Owl nice Jquery min Js-->
-   <script src="../../static/assets/js/jquery.nice-select.min.js"></script>
+   <script src="{% static '/assets/js/jquery.nice-select.min.js' %}"></script>
    <!--Swiper min Js-->
-   <script src="../../static/assets/js/swiper-bundle.min.js"></script>
+   <script src="{% static '/assets/js/swiper-bundle.min.js' %}"></script>
    <!--main Js-->
-   <script src="../../static/assets/js/main.js"></script>
+   <script src="{% static '/assets/js/main.js' %}"></script>
 </body>
 </html>

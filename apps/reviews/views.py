@@ -16,8 +16,8 @@ def update_reviews(request, pk):
     reviews = Reviews.objects.get(id=pk)
 
     if request.method == 'POST':
-        text = request.POST['text']
-        reviews.txt = text
+        txt = request.POST['text']
+        reviews.txt = txt
         reviews.save()
 
         return redirect('homepage')

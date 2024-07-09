@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views import View
+from django.views import View, generic
 from apps.courses.models import Course, Enrollment
 from django.contrib.auth.decorators import login_required
 from apps.courses.forms import EnrollmentForm
@@ -7,10 +7,10 @@ from apps.courses.forms import EnrollmentForm
 from apps.courses.models import Course
 
 
-class CourseListView(View):
-    def get(self, request):
-        courses = Course.objects.all()
-        return render(request, 'salud/classes.html', {'courses': courses})
+class CourseListView(generic.ListView):
+    model = Course
+    template_name = 'salud/classes.html'
+    context_object_name = 'classes'
 
 
 class EnrollCourseView(View):

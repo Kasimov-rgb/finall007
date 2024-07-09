@@ -1,25 +1,35 @@
 from django.db import models
-
-
-# from apps.schedules.models import
+import datetime
 
 
 class Schedule(models.Model):
-    date = models.DateField(
-        max_length=100,
-        verbose_name="Дата",
+    DAY_CHOICES = [
+        ('monday', 'Monday'),
+        ('tuesday', 'Tuesday'),
+        ('wednesday', 'Wednesday'),
+        ('thursday', 'Thursday'),
+        ('friday', 'Friday'),
+        ('saturday', 'Saturday'),
+        ('sunday', 'Sunday'),
+    ]
+
+    day = models.CharField(
+        max_length=10,
+        choices=DAY_CHOICES,
+        verbose_name="День недели"
     )
-    time = models.TimeField(
-        max_length=5,
-        verbose_name="Время"
+    opening_time = models.TimeField(
+        verbose_name="Время открытия"
     )
-    event = models.CharField(
-        max_length=100,
+
+    closing_time = models.TimeField(
+        verbose_name="Время закрытия",
+        default=datetime.time(hour=23, minute=59, second=59)
     )
 
     def __str__(self):
-        return f"{self.date} - {self.time}: {self.event}"
+        return f"{self.get_day_display()} - ({self.opening_time} - {self.closing_time})"
 
     class Meta:
         verbose_name = 'Расписание'
-        verbose_name_plural = 'Расписании'
+        verbose_name_plural = 'Расписания'

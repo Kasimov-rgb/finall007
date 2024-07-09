@@ -48,8 +48,8 @@
 
 <!--=========== Breadcumd Section Here ========= -->
 <section class="breadcumd__banner banner__image classes__bg">
-    <div class="container">
-       <div class="breadcumd__wrapper">
+{#    <div class="container">#}
+{#       <div class="breadcumd__wrapper">     .#}
           <h2 class="left__content wow fadeInUp"data-wow-duration="3s">
             Shop Page
           </h2>
@@ -77,10 +77,11 @@
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="row g-4">
+                    {% for tovar in products %}
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.3s">
                         <div class="product__items style__shop">
                             <div class="product__thumb">
-                                <img src="../../static/assets/img/product/1.jpg" alt="product__image">
+                                <img src="{{ tovar.image_for_product.url }}" alt="product__image">
                                 <ul class="product__icon d-flex justify-content-center">
                                     <li>
                                         <a href="#0"><i class="fa-regular fa-eye"></i></a>
@@ -96,15 +97,15 @@
                             <div class="product__content center">
                                 <h5>
                                     <a href="#0">
-                                        Elliptical trainer
+                                        {{ tovar.title }}
                                     </a>
                                 </h5>
                                   <div class="product__price d-flex align-items-center justify-content-center">
                                     <del>
-                                        $350.00
+                                        {{ tovar.price }}
                                     </del>
                                     <h6>
-                                        $230.00
+                                        {{ tovar.price }}
                                     </h6>
                                 </div>
                                 <ul>
@@ -122,340 +123,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.5s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/2.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.7s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/3.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.9s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/4.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.3s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/5.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.5s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/1.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.7s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/2.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.9s">
-                        <div class="product__items style__shop">
-                            <div class="product__thumb">
-                                <img src="../../static/assets/img/product/3.jpg" alt="product__image">
-                                <ul class="product__icon d-flex justify-content-center">
-                                    <li>
-                                        <a href="#0"><i class="fa-regular fa-eye"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"><i class="fa-solid fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product__content center">
-                                <h5>
-                                    <a href="#0">
-                                        Elliptical trainer
-                                    </a>
-                                </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        $350.00
-                                    </del>
-                                    <h6>
-                                        $230.00
-                                    </h6>
-                                </div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-                <ul class="default__pagination pt-40 wow fadeInUp"data-wow-duration="3s">
+{#                <ul class="default__pagination pt-40 wow fadeInUp"data-wow-duration="3s">#}
                     <li>
-                       <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+{#                       <a href="#"><i class="fa-solid fa-angle-left"></i></a>#}
                     </li>
                     <li>
-                       <a href="#">1</a>
+{#                       <a href="#">1</a>#}
                     </li>
                     <li>
-                       <a href="#">2</a>
+{#                       <a href="#">2</a>#}
                     </li>
                     <li>
-                       <a href="#">3</a>
+{#                       <a href="#">3</a>/#}
                     </li>
                        <li>
-                          <a href="#">4</a>
+{#                          <a href="#">4</a>#}
                     </li>
                     <li>
-                       <a href="#">5</a>
+{#                       <a href="#">5</a>#}
                        </li>
                     <li>
                        <a href="#"><i class="fa-solid fa-angle-right"></i></a>
@@ -577,27 +264,27 @@
 <!--==== Product Section End ======= -->
 
 <!--=========== Newsletter Section Here ========= -->
-<section class="newsletter__section">
-    <div class="container">
-        <div class="newsletter__wrapper">
+{#<section class="newsletter__section">#}
+{#    <div class="container">#}
+{#        <div class="newsletter__wrapper">#}
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">
+{#                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">#}
                         <div class="section__header section__center">
                             <h2>
-                                Subscribe Here
+{#                                Subscribe Here#}
                             </h2>
                             <p>
-                                Subscribe to get notified about new templates and updates
+{#                                Subscribe to get notified about new templates and updates#}
                             </p>
                         </div>
                         <form action="#">
-                            <input type="email" placeholder="Enter your email address">
-                            <button class="cmn--btn" type="submit">
-                                <span>
-                                  Subscribe
-                                </span>
-                            </button>
+{#                            <input type="email" placeholder="Enter your email address">#}
+{#                            <button class="cmn--btn" type="submit">#}
+{#                                <span>#}
+{#                                  Subscribe#}
+{#                                </span>#}
+{#                            </button>#}
                         </form>
                     </div>
                 </div>

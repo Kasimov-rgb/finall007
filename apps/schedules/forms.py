@@ -1,8 +1,8 @@
 from django import forms
-from apps.schedules.models import Schedule
+from .models import Schedule
 
 
 class ScheduleForm(forms.ModelForm):
     class Meta:
         model = Schedule
-        fields = ['date', 'time', 'event']
+        fields = '__all__'

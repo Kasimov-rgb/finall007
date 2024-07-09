@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 {% load static %}
 
 <html lang="en">
@@ -9,56 +9,67 @@
    <meta name="author" content="NextGenerationDev">
    <title>Salud - Fitness & Gym HTML Template</title>
    <!--Favicon img-->
-   <link rel="shortcut icon" href="{% static '../../static/assets/img/favicon/favicon.png' %}">
+   <link rel="shortcut icon" href="{% static 'assets/img/favicon/favicon.png' %}">
    <!--Bootstarp min css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
    <!--Bootstarp map css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/bootstrap.css.map' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css.map' %}">
    <!--Odometer css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/odometer.css '%}">
+   <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
    <!--Owl Carousel css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/owl.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/owl.min.css' %}">
    <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/owl.theme.default.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
    <!--All min css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/all.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
    <!--Animate css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/animate.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
    <!--Popup css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/magnific-popup.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
    <!--Swiper min css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/swiper-bundle.min.css'%}">
+   <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
    <!--Owl Nice select css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/nice-select.css'%}">
+   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
    <!--main css-->
-   <link rel="stylesheet" href="{% static '../../static/assets/css/main.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 </head>
 
 
 <body>
 
   {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{ product.title }}</h1>
+                <p>Price: {{ product.price }}</p>
+                <p>Category: {{ product.category }}</p>
+                <p>Description: {{ product.description }}</p>
+                <!-- Добавьте другие поля продукта, которые вам нужны -->
+            </div>
+        </div>
+    </div>
   {% endblock %}
 
    <!--Jquery 3 6 0 Min Js-->
-   <script src="{%  static '../../static/assets/js/jquery-3.7.1.min.js' %}"></script>
+   <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
    <!--Bootstrap bundle min Js-->
-   <script src="{% static '../../static/assets/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
    <!--Viewport Jquery Js-->
-   <script src="{% static '../../static/assets/js/viewport.jquery.js' %}"></script>
+   <script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
    <!--Wow min Js-->
-   <script src="{% static '../../static/assets/js/wow.min.js' %}"></script>
+   <script src="{% static 'assets/js/wow.min.js' %}"></script>
    <!--Odometer Up min Js-->
-   <script src="{% static '../../static/assets/js/odometer.min.js' %}"></script>
+   <script src="{% static 'assets/js/odometer.min.js' %}"></script>
    <!--Owl Carousel min Js-->
-   <script src="{% static '../../static/assets/js/owl.min.js' %}"></script>
+   <script src="{% static 'assets/js/owl.min.js' %}"></script>
    <!--Popup min Js-->
-   <script src="{% static  '../../static/assets/js/jquery.magnific-popup.min.js' %}"></script>
+   <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
    <!--Owl nice Jquery min Js-->
-   <script src="{% static '../../static/assets/js/jquery.nice-select.min.js' %}"></script>
+   <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
    <!--Swiper min Js-->
-   <script src="{% static '../../static/assets/js/swiper-bundle.min.js' %}"></script>
+   <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
    <!--main Js-->
-   <script src="{% static '../../static/assets/js/main.js' %}"></script>
+   <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 </html>

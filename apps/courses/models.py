@@ -15,17 +15,17 @@ class Course(models.Model):
     )
     duration = models.PositiveIntegerField()
 
+    image_for_classes = models.ImageField(
+        upload_to="classes_media/",
+        blank=True,
+        null=True,
+    )
     def __str__(self):
         return self.title
 
 
 class BoxingCourse(Course):
-    punch_types = models.CharField(
-        max_length=100,
-    )
-    sparring_partner_required = models.BooleanField(
-        default=False,
-    )
+
 
     def __str__(self):
         return self.title

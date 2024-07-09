@@ -1,4 +1,7 @@
 ﻿<!DOCTYPE html>
+
+{% load static  %}
+
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -7,29 +10,29 @@
    <meta name="author" content="NextGenerationDev">
    <title>Salud - Fitness & Gym HTML Template</title>
    <!--Favicon img-->
-   <link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.png">
+   <link rel="shortcut icon" href="{% static '/assets/img/favicon/favicon.png' %}">
    <!--Bootstarp min css-->
-   <link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}">
    <!--Bootstarp map css-->
-   <link rel="stylesheet" href="../../static/assets/css/bootstrap.css.map">
+   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
    <!--Odometer css-->
-   <link rel="stylesheet" href="../../static/assets/css/odometer.css">
+   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
    <!--Owl Carousel css-->
-   <link rel="stylesheet" href="../../static/assets/css/owl.min.css">
+   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
    <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="../../static/assets/css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="{% static  '/assets/css/owl.theme.default.min.css' %}">
    <!--All min css-->
-   <link rel="stylesheet" href="../../static/assets/css/all.min.css">
+   <link rel="stylesheet" href="{%  static '/assets/css/all.min.css' %}">
    <!--Animate css-->
-   <link rel="stylesheet" href="../../static/assets/css/animate.css">
+   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
    <!--Popup css-->
-   <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
    <!--Swiper min css-->
-   <link rel="stylesheet" href="../../static/assets/css/swiper-bundle.min.css">
+   <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
    <!--Owl Nice select css-->
-   <link rel="stylesheet" href="../../static/assets/css/nice-select.css">
+   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}c">
    <!--main css-->
-   <link rel="stylesheet" href="../../static/assets/css/main.css">
+   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}" >
 </head>
 <body>
 
@@ -72,9 +75,10 @@
 <section class="about__section pt-120 pb-120">
     <div class="container">
         <div class="row g-5">
+            {% for trainer in about %}
             <div class="col-xl-4">
                 <div class="about__thumb wow fadeInDown" data-wow-duration="2s">
-                    <img src="../../static/assets/img/about/trainer.jpg" alt="about-image">
+                    <img src="{{ trainer.image.url }}" alt="Trainer Image">
                 </div>
             </div>
             <div class="col-xl-8">
@@ -87,6 +91,7 @@
                         </div>
                     </div>
                     <h2 class="wow fadeInUp" data-wow-duration="2s">
+                        {{ trainer.name }} <span>{{ trainer.specialization }}</span> <br>
                         PERSONAL <span>TRAININGS</span> <br>
                         ANYWHERE.
                     </h2>
@@ -95,14 +100,9 @@
                     <div class="col-md-7">
                         <div class="text wow fadeInDown" data-wow-duration="2s">
                             <p>
-                                The word gym is a shortened form of gymnasium originally a Latin word meaning school for gymnastics from the Greek gymnasion public place where exercises are practiced.
+                                {{ trainer.description }}
                             </p>
                         </div>
-                        <ul class="wow fadeInDown" data-wow-duration="2s">
-                            <li>We find your trainer.</li>
-                            <li>We make your plan.</li>
-                            <li>Take training anywhere.</li>
-                        </ul>
                         <div class="about__button mt-3 wow fadeInUp" data-wow-duration="3s">
                             <a href="#0" class="cmn--btn">
                                 Get Started
@@ -111,14 +111,16 @@
                     </div>
                     <div class="col-md-5">
                         <div class="right__thumb wow fadeInUp" data-wow-duration="2s">
-                            <img src="../../static/assets/img/about/trainer2.jpg" alt="about-image">
+                            <img src="{{ trainer.image2.url }}" alt="Trainer Image 2">
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>
+
 <!--==== About Section End ======= -->
 
 <!--=========== Counter Section Start ========= -->
@@ -354,7 +356,7 @@
                                 <h6 class="pro-count">83%</h6>
                             </div>
                         </div>
-                        <a href="#0" class="cmn--btn wow fadeInUp" data-wow-duration="3s">contact us</a>
+{#                        <a href="#0" class="cmn--btn wow fadeInUp" data-wow-duration="3s">contact us</a>#}
                     </div>
                 </div>
             </div>
@@ -469,28 +471,28 @@
 
 <!--=========== Logo Section Here ========= -->
 <div class="logo-section pb-120 pt-120">
-    <div class="container">
-       <div class="logo-wrapper owl-carousel owl-theme">
-          <div class="logo-thumb wow fadeInDown" data-wow-duration="2s">
-             <img src="../../static/assets/img/logo/logo1.png" alt="logo-image">
-          </div>
-          <div class="logo-thumb wow fadeInUp" data-wow-duration="3s">
-            <img src="../../static/assets/img/logo/logo2.png" alt="logo-image">
-          </div>
-          <div class="logo-thumb wow fadeInDown" data-wow-duration="3s">
-            <img src="../../static/assets/img/logo/logo3.png" alt="logo-image">
-          </div>
-          <div class="logo-thumb wow fadeInUp" data-wow-duration="4s">
-            <img src="../../static/assets/img/logo/logo4.png" alt="logo-image">
-          </div>
-          <div class="logo-thumb wow fadeInDown" data-wow-duration="4s">
-            <img src="../../static/assets/img/logo/logo5.png" alt="logo-image">
-          </div>
-          <div class="logo-thumb wow fadeInUp" data-wow-duration="5s">
-            <img src="../../static/assets/img/logo/logo6.png" alt="logo-image">
-          </div>
-       </div>
-    </div>
+{#    <div class="container">#}
+{#       <div class="logo-wrapper owl-carousel owl-theme">#}
+{#          <div class="logo-thumb wow fadeInDown" data-wow-duration="2s">#}
+{#             <img src="../../static/assets/img/logo/logo1.png" alt="logo-image">#}
+{#          </div>#}
+{#          <div class="logo-thumb wow fadeInUp" data-wow-duration="3s">#}
+{#            <img src="../../static/assets/img/logo/logo2.png" alt="logo-image">#}
+{#          </div>#}
+{#          <div class="logo-thumb wow fadeInDown" data-wow-duration="3s">#}
+{#            <img src="../../static/assets/img/logo/logo3.png" alt="logo-image">#}
+{#          </div>#}
+{#          <div class="logo-thumb wow fadeInUp" data-wow-duration="4s">#}
+{#            <img src="../../static/assets/img/logo/logo4.png" alt="logo-image">#}
+{#          </div>#}
+{#          <div class="logo-thumb wow fadeInDown" data-wow-duration="4s">#}
+{#            <img src="../../static/assets/img/logo/logo5.png" alt="logo-image">#}
+{#          </div>#}
+{#          <div class="logo-thumb wow fadeInUp" data-wow-duration="5s">#}
+{#            <img src="../../static/assets/img/logo/logo6.png" alt="logo-image">#}
+{#          </div>#}
+{#       </div>#}
+{#    </div>#}
 </div>
 <!--=========== Logo Section End ========= -->
 
@@ -533,24 +535,24 @@
 
 
    <!--Jquery 3 6 0 Min Js-->
-   <script src="../../static/assets/js/jquery-3.7.1.min.js"></script>
+   <script src="{% static '/assets/js/jquery-3.7.1.min.js' %}"></script>
    <!--Bootstrap bundle min Js-->
-   <script src="../../static/assets/js/bootstrap.bundle.min.js"></script>
+   <script src="{% static '/assets/js/bootstrap.bundle.min.js' %}"></script>
    <!--Viewport Jquery Js-->
-   <script src="../../static/assets/js/viewport.jquery.js"></script>
+   <script src="{% static '/assets/js/viewport.jquery.js' %}"></script>
    <!--Wow min Js-->
-   <script src="../../static/assets/js/wow.min.js"></script>
+   <script src="{% static '/assets/js/wow.min.js' %}"></script>
    <!--Odometer Up min Js-->
-   <script src="../../static/assets/js/odometer.min.js"></script>
+   <script src="{% static '/assets/js/odometer.min.js' %}"></script>
    <!--Owl Carousel min Js-->
-   <script src="../../static/assets/js/owl.min.js"></script>
+   <script src="{% static '/assets/js/owl.min.js' %}"></script>
    <!--Popup min Js-->
-   <script src="../../static/assets/js/jquery.magnific-popup.min.js"></script>
+   <script src="{% static '/assets/js/jquery.magnific-popup.min.js' %}"></script>
    <!--Owl nice Jquery min Js-->
-   <script src="../../static/assets/js/jquery.nice-select.min.js"></script>
+   <script src="{% static '/assets/js/jquery.nice-select.min.js' %}"></script>
    <!--Swiper min Js-->
-   <script src="../../static/assets/js/swiper-bundle.min.js"></script>
+   <script src="{% static '/assets/js/swiper-bundle.min.js' %}"></script>
    <!--main Js-->
-   <script src="../../static/assets/js/main.js"></script>
+   <script src="{% static '/assets/js/main.js' %}"></script>
 </body>
 </html>

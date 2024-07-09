@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 {% load static %}
 
 <html lang="en">
@@ -9,142 +8,143 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="author" content="NextGenerationDev">
    <title>Salud - Fitness & Gym HTML Template</title>
-   <!--Favicon img-->
-   <link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.png">
-   <!--Bootstarp min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}">
-   <!--Bootstarp map css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
-   <!--Odometer css-->
-   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
-   <!--Owl Carousel css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
-   <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.theme.default.min.css' %}">
-   <!--All min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/all.min.css' %}">
-   <!--Animate css-->
-   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
-   <!--Popup css-->
-   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
-   <!--Swiper min css-->
+   <!-- Favicon img -->
+   <link rel="shortcut icon" href="{% static 'assets/img/favicon/favicon.png' %}">
+   <!-- Bootstarp min css -->
+   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+   <!-- Odometer css -->
+   <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
+   <!-- Owl Carousel css -->
+   <link rel="stylesheet" href="{% static 'assets/css/owl.min.css' %}">
+   <!-- Owl Carousel Theme css -->
+   <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+   <!-- All min css -->
+   <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+   <!-- Animate css -->
+   <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+   <!-- Popup css -->
+   <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+   <!-- Swiper min css -->
    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
-   <!--Owl Nice select css-->
-   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}">
-   <!--main css-->
-   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
+   <!-- Owl Nice select css -->
+   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+   <!-- Main css -->
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 </head>
 <body>
 
-<!--==== Scrool Top Bottom Here ======= -->
+<!-- Scroll Top Bottom Here -->
 <div id="progress">
     <span id="valiu"><i class="fa-solid fa-angles-up"></i></span>
 </div>
-<!--==== Scrool Top Bottom End ======= -->
+<!-- Scroll Top Bottom End -->
 
 <!-- Header Here -->
-    {% include 'base/header.html' %}
+{% include 'base/header.html' %}
 <!-- Header End -->
 
-<!--=========== Breadcumd Section Here ========= -->
+<!-- Breadcrumb Section Here -->
 <section class="breadcumd__banner banner__image trainer__bg">
     <div class="container">
        <div class="breadcumd__wrapper">
-          <h2 class="left__content wow fadeInUp"data-wow-duration="3s">
-            Our Trainers
-          </h2>
-          <ul class="right__content wow fadeInUp"data-wow-duration="3s">
-             <li>
-                <a href="index.html">
-                   Home
-                </a>
-             </li>
-             <li>
-                <i class="fa-solid fa-chevron-right"></i>
-             </li>
-             <li>
-               Trainers
-             </li>
+          <h2 class="left__content wow fadeInUp" data-wow-duration="3s">Our Trainers</h2>
+          <ul class="right__content wow fadeInUp" data-wow-duration="3s">
+             <li><a href="index.html">Home</a></li>
+             <li><i class="fa-solid fa-chevron-right"></i></li>
+             <li>Trainers</li>
           </ul>
        </div>
     </div>
 </section>
-<!--=========== Breadcumd Section End ========= -->
+<!-- Breadcrumb Section End -->
 
-<!--==== Team Section Here ======= -->
-<section class="team__section pt-120 pb-120">
+<!-- Team Section Here -->
+<!-- Team Section Here -->
+<section class="team__details pt-120 pb-120">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-5">
             {% for coach in trainer %}
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="team__items">
-                    <div class="team__thumb">
-                        <img src="../../static/assets/img/team/team1.jpg" alt="team__image">
-                        <div class="team__icon">
-                            <ul>
-                                <li>
-                                    <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                                <li class="mr-none">
-                                    <a href="#0"><i class="fa-brands fa-twitter"></i></a>
-                                </li>
-                                <li class="mr-none">
-                                    <a href="#0"><i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="share__icon">
-                            <a href="#">
-                                <i class="fas fa-share-nodes"></i>							
-							</a>
-                        </div>
-                        <div class="team__content background-color">
-                            <h5>
-                               <a href="#0">
-                                Matt Roberts
-                               </a>
-                            </h5>
-                            <p>
-                                Body building Coach
-                            </p>
+            <div class="col-lg-4">
+                <div class="trainner__left">
+                    <div class="trainner__thumb wow fadeInLeft" data-wow-duration="3s">
+                        {% if coach.image_for_trainer %}
+    <img src="{{ coach.image_for_trainer.url }}" alt="Trainer Image">
+{% else %}
+    <p>No image available</p>
+{% endif %}
+
+                    </div>
+                </div>
+                <div class="trainers__cont mt-4">
+                    <h5 class="wow fadeInDown" data-wow-duration="3s">Fitness Trainer</h5>
+                    <ul class="wow fadeInUp" data-wow-duration="3s">
+                        <li class="mb-2">Experience: <span>{{ coach.experience }}</span></li>
+                        <li class="mb-2">E-mail: <span>{{ coach.email }}</span></li>
+                        <li class="mb-2">Phone: <span>{{ coach.phone }}</span></li>
+                    </ul>
+                    <ul class="social__icon mt-4 wow fadeInDown" data-wow-duration="3s">
+                        <li class="face"><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="face"><a href="#0"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li class="lind"><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li class="insta"><a href="#0"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="youtube"><a href="#0"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="trainner__right">
+                    <div class="trainner__content">
+                        <h4 class="wow fadeInDown" data-wow-duration="3s">{{ coach.name }}</h4>
+                        <p class="wow fadeInUp" data-wow-duration="3s">{{ coach.description }}</p>
+                        <h5 class="trainner__tittle mt-4 wow fadeInDown" data-wow-duration="3s">Personal Skills</h5>
+                        <div class="progressbar-wrap style__progress">
+                            <div class="progress-element progress-element--html wow fadeInRight" data-wow-duration="3s">
+                                <h6>Weight Lifting</h6>
+                                <div class="main-progress">
+                                    <div class="progress-container">
+                                        <span class="main-scale main-scle2"></span>
+                                    </div>
+                                    <h6 class="pro-count">90%</h6>
+                                </div>
+                            </div>
+                            <div class="progress-element progress-element--javascript wow fadeInRight" data-wow-duration="5s">
+                                <h6>Fat Loss</h6>
+                                <div class="main-progress">
+                                    <div class="progress-container">
+                                        <span class="main-scale"></span>
+                                    </div>
+                                    <h6 class="pro-count">80%</h6>
+                                </div>
+                            </div>
+                            <div class="progress-element progress-element--javascript wow fadeInRight" data-wow-duration="7s">
+                                <h6>Cardio Training</h6>
+                                <div class="main-progress">
+                                    <div class="progress-container">
+                                        <span class="main-scale"></span>
+                                    </div>
+                                    <h6 class="pro-count">70%</h6>
+                                </div>
+                            </div>
+                            <div class="progress-element progress-element--javascript mb-4 wow fadeInRight" data-wow-duration="9s">
+                                <h6>SKIN</h6>
+                                <div class="main-progress">
+                                    <div class="progress-container">
+                                        <span class="main-scale"></span>
+                                    </div>
+                                    <h6 class="pro-count">63%</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-                </div>
             </div>
+            {% endfor %}
         </div>
-        <ul class="default__pagination pt-40 wow fadeInDown" data-wow-delay="0.4s">
-            <li>
-               <a href="#"><i class="fa-solid fa-angle-left"></i></a>
-            </li>
-            <li>
-               <a href="#">1</a>
-            </li>
-            <li>
-               <a href="#">2</a>
-            </li>
-            <li>
-               <a href="#">3</a>
-            </li>
-               <li>
-                  <a href="#">4</a>
-            </li>
-            <li>
-               <a href="#">5</a>
-               </li>
-            <li>
-               <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-            </li>
-        </ul>
     </div>
 </section>
-<!--==== Team Section End ======= -->
+<!-- Team Section End -->
 
-<!--=========== Newsletter Section Here ========= -->
+<!-- Newsletter Section Here -->
 <section class="newsletter__section">
     <div class="container">
         <div class="newsletter__wrapper">
@@ -152,20 +152,12 @@
                 <div class="col-lg-6">
                     <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">
                         <div class="section__header section__center">
-                            <h2>
-                                Subscribe Here
-                            </h2>
-                            <p>
-                                Subscribe to get notified about new templates and updates
-                            </p>
+                            <h2>Subscribe Here</h2>
+                            <p>Subscribe to get notified about new templates and updates</p>
                         </div>
                         <form action="#">
                             <input type="email" placeholder="Enter your email address">
-                            <button class="cmn--btn" type="submit">
-                                <span>
-                                  Subscribe
-                                </span>
-                            </button>
+                            <button class="cmn--btn" type="submit"><span>Subscribe</span></button>
                         </form>
                     </div>
                 </div>
@@ -173,16 +165,13 @@
         </div>
     </div>
 </section>
-<!--=========== Newsletter Section End ========= -->
+<!-- Newsletter Section End -->
 
-<!--=========== Footer Section Here ========= -->
-    {% include 'base/footer.html' %}
-<!--=========== Footer Section End ========= -->
+<!-- Footer Section Here -->
+{% include 'base/footer.html' %}
+<!-- Footer Section End -->
 
-  
-
-
-   <!--Jquery 3 6 0 Min Js-->
+<!--Jquery 3 6 0 Min Js-->
    <script src="{% static '/assets/js/jquery-3.7.1.min.js' %}"></script>
    <!--Bootstrap bundle min Js-->
    <script src="{% static '/assets/js/bootstrap.bundle.min.js' %}"></script>
@@ -204,3 +193,4 @@
    <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 </html>
+

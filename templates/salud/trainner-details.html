@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-{% load static  %}
-
+{% load static %}
 
 <html lang="en">
 <head>
@@ -10,29 +9,29 @@
    <meta name="author" content="NextGenerationDev">
    <title>Salud - Fitness & Gym HTML Template</title>
    <!--Favicon img-->
-   <link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.png">
-   <!--Bootstarp min css-->
+   <link rel="shortcut icon" href="{% static 'assets/img/favicon/favicon.png' %}">
+   <!--Bootstrap min css-->
    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-   <!--Bootstarp map css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
+   <!--Bootstrap map css-->
+   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css.map' %}">
    <!--Odometer css-->
-   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
    <!--Owl Carousel css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/owl.min.css' %}">
    <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.theme.default.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
    <!--All min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/all.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
    <!--Animate css-->
-   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
    <!--Popup css-->
-   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
    <!--Swiper min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/swiper-bundle.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
    <!--Owl Nice select css-->
-   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
    <!--main css-->
-   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 </head>
 <body>
 
@@ -43,167 +42,103 @@
 <!--==== Scrool Top Bottom End ======= -->
 
 <!-- Header Here -->
- {% include 'base/header.html' %}
+{% include 'base/header.html' %}
 <!-- Header End -->
 
 <!--=========== Breadcumd Section Here ========= -->
-<section class="breadcumd__banner banner__image trainer__bg">
-    <div class="container">
-       <div class="breadcumd__wrapper">
-          <h2 class="left__content wow fadeInUp"data-wow-duration="3s">
-            trainner details
-          </h2>
-          <ul class="right__content wow fadeInUp"data-wow-duration="3s">
-             <li>
-                <a href="index.html">
-                   Home
-                </a>
-             </li>
-             <li>
-                <i class="fa-solid fa-chevron-right"></i>
-             </li>
-             <li>
-               Trainers
-             </li>
-          </ul>
-       </div>
-    </div>
-</section>
+{#<section class="breadcumd__banner banner__image trainer__bg">#}
+{#    <div class="container">#}
+{#       <div class="breadcumd__wrapper">#}
+{#          <h2 class="left__content wow fadeInUp" data-wow-duration="3s">#}
+{#            Trainer Details#}
+{#          </h2>#}
+{#          <ul class="right__content wow fadeInUp" data-wow-duration="3s">#}
+{#             <li>#}
+{#                <a href="{% url 'home' %}">#}
+{#                   Home#}
+{#                </a>#}
+{#             </li>#}
+{#             <li>#}
+{#                <i class="fa-solid fa-chevron-right"></i>#}
+{#             </li>#}
+{#             <li>#}
+{#               Trainers#}
+{#             </li>#}
+{#          </ul>#}
+{#       </div>#}
+{#    </div>#}
+{#</section>#}
 <!--=========== Breadcumd Section End ========= -->
 
 <!--==== Team Details Section Here ======= -->
 <section class="team__details pt-120 pb-120">
     <div class="container">
         <div class="row g-5">
-            {% for coach in trainer %}
+{% for trainer in trainers %}
             <div class="col-lg-4">
                 <div class="trainner__left">
-                    <div class="trainner__thumb wow fadeInLeft"data-wow-duration="3s">
-                        <img src="../../static/assets/img/team/details/t1.jpg" alt="tranner__image">
+                    <div class="trainner__thumb wow fadeInLeft" data-wow-duration="3s">
+                        <img src="{{ trainer.image_for_trainer.url }}" alt="Trainer Image">
                     </div>
-                    <div class="trainers__cont mt-4">
-                        <h5 class=" wow fadeInDown"data-wow-duration="3s">
-                            Fitness Trainer
-                        </h5>
-                        <ul class=" wow fadeInUp"data-wow-duration="3s">
-                            <li class="mb-2">
-                                Experience:
-                                <span>6 years</span>
-                            </li>
-                            <li class="mb-2">
-                                E-mail:
-                                <span>examle333@gamil.com</span>
-                            </li>
-                            <li class="mb-2">
-                                Phone:
-                                <span>+42 019 099 123</span>
-                            </li>
-                        </ul>
-                        <ul class="social__icon mt-4 wow fadeInDown"data-wow-duration="3s">
-                            <li class="face">
-                                <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                            </li>
-                            <li class="face">
-                                <a href="#0"><i class="fa-brands fa-twitter"></i></a>
-                            </li>
-                            <li class="lind">
-                                <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                            </li>
-                            <li class="insta">
-                                <a href="#0"><i class="fa-brands fa-instagram"></i></a>
-                            </li>
-                            <li class="youtube">
-                                <a href="#0"><i class="fa-brands fa-youtube"></i></a>
-                            </li>
-                        </ul>
-
+                </div>
+                <div class="trainers__cont mt-4">
+                    <h5 class="wow fadeInDown" data-wow-duration="3s">{{ trainer.specialization }}</h5>
+                    <ul class="wow fadeInUp" data-wow-duration="3s">
+                        <li class="mb-2">Experience: <span>{{ trainer.salary }}</span></li>
+                        <!-- Добавьте остальные поля, такие как E-mail и Phone, если они есть в вашей модели -->
+                    </ul>
+                    <ul class="social__icon mt-4 wow fadeInDown" data-wow-duration="3s">
+                        <!-- Добавьте социальные ссылки, если они есть в вашей модели -->
+                    </ul>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="trainner__right">
                     <div class="trainner__content">
-                        <h4 class=" wow fadeInDown"data-wow-duration="3s">
-                            LOUISE PARKER
-                        </h4>
-                        <p class=" wow fadeInUp"data-wow-duration="3s">
-                            Alteration in some form by injected humour or randomised words which don't look even slightly randomised words believable.Alteration in some form by injected humour or randomised words which don't look even slightly randomised words believable.Alteration in some form by injected humour or randomised words which don't look even slightly randomised words believable.
-                        </p>
-                        <h5 class="trainner__tittle mt-4 wow fadeInDown"data-wow-duration="3s">
-                            Personal Skills
-                        </h5>
+                        <h4 class="wow fadeInDown" data-wow-duration="3s">{{ trainer.name }}</h4>
+                        <!-- Добавьте описание тренера, если оно есть в вашей модели -->
+                        <!-- Добавьте личные навыки тренера, если они есть в вашей модели -->
                         <div class="progressbar-wrap style__progress">
-                            <div class="progress-element progress-element--html wow fadeInRight"data-wow-duration="3s">
-                                <h6>Weight Lifting</h6>
-                                <div class="main-progress">
-                                    <div class="progress-container">
-                                        <span class="main-scale main-scle2"></span>
-                                    </div>
-                                    <h6 class="pro-count">90%</h6>
-                                </div>
-                            </div>
-                            <div class="progress-element progress-element--javascript wow fadeInRight"data-wow-duration="5s">
-                                <h6>Fat Loss</h6>
-                                <div class="main-progress">
-                                    <div class="progress-container">
-                                        <span class="main-scale"></span>
-                                    </div>
-                                    <h6 class="pro-count">80%</h6>
-                                </div>
-                            </div>
-                            <div class="progress-element progress-element--javascript wow fadeInRight"data-wow-duration="7s">
-                                <h6>Cardio Training</h6>
-                                <div class="main-progress">
-                                    <div class="progress-container">
-                                        <span class="main-scale"></span>
-                                    </div>
-                                    <h6 class="pro-count">70%</h6>
-                                </div>
-                            </div>
-                            <div class="progress-element progress-element--javascript mb-4 wow fadeInRight"data-wow-duration="9s">
-                                <h6>SKIN</h6>
-                                <div class="main-progress">
-                                    <div class="progress-container">
-                                        <span class="main-scale"></span>
-                                    </div>
-                                    <h6 class="pro-count">63%</h6>
-                                </div>
-                            </div>
+                            <!-- Добавьте прогресс-бары для навыков, если они есть в вашей модели -->
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
             {% endfor %}
+        </div>
     </div>
 </section>
 <!--==== Team Details Section End ======= -->
 
+
 <!--=========== Footer Section Here ========= -->
-    {% include 'base/footer.html' %}
+{% include 'base/footer.html' %}
 <!--=========== Footer Section End ========= -->
 
-  
-
-
-   <!--Jquery 3 6 0 Min Js-->
-   <script src="{% static '/assets/js/jquery-3.7.1.min.js' %}"></script>
-   <!--Bootstrap bundle min Js-->
-   <script src="{% static '/assets/js/bootstrap.bundle.min.js' %}"></script>
-   <!--Viewport Jquery Js-->
-   <script src="{% static '/assets/js/viewport.jquery.js' %}"></script>
-   <!--Wow min Js-->
-   <script src="{% static '/assets/js/wow.min.js' %}"></script>
-   <!--Odometer Up min Js-->
-   <script src="{% static '/assets/js/odometer.min.js' %}"></script>
-   <!--Owl Carousel min Js-->
-   <script src="{% static '/assets/js/owl.min.js' %}"></script>
-   <!--Popup min Js-->
-   <script src="{% static '/assets/js/jquery.magnific-popup.min.js' %}"></script>
-   <!--Owl nice Jquery min Js-->
-   <script src="{% static '/assets/js/jquery.nice-select.min.js' %}"></script>
-   <!--Swiper min Js-->
-   <script src="{% static '/assets/js/swiper-bundle.min.js' %}"></script>
-   <!--main Js-->
-   <script src="{% static '/assets/js/main.js' %}"></script>
+<!--Jquery 3 6 0 Min Js-->
+<script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+<!--Bootstrap bundle min Js-->
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<!--Viewport Jquery Js-->
+<script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
+<!--Wow min Js-->
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<!--Odometer Up min Js-->
+<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+<!--Owl Carousel min Js-->
+<script src="{% static 'assets/js/owl.min.js' %}"></script>
+<!--Popup min Js-->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<!--Owl nice Jquery min Js-->
+<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+<!--Swiper min Js-->
+<script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+<!--main Js-->
+<script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 </html>
+
+
+
+
+
