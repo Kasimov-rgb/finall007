@@ -3,6 +3,7 @@ from django.views import generic
 from django.views.generic import TemplateView
 
 from apps.categories.models import Category
+from apps.products.forms import ProductForm
 from apps.products.models import Product
 from apps.trainer.models import Trainer
 
@@ -16,20 +17,39 @@ class ProductListView(generic.ListView):
     template_name = 'salud/shop.html'
     context_object_name = 'products'
 
-    # def get_context_data(self, *args, **kwargs):
-    #     context = super().get_context_data(*args, **kwargs)
-    #
-    #     context['left_categories'] = Category.objects.filter(parent=None)
-    #     context['dumbbells_product'] = Product.objects.filter(category__title='Гантели')[:5]
-    #     context['protein_product'] = Product.objects.filter(category__title='Протойн')[:5]
-    #     context['sportswear_product'] = Product.objects.filter(category__title='Спортивная одежда')[:5]
-    #     context['traners'] = Trainer.objects.all()[:3]
-    #
-    #     return context
-
 
 def shop_single(request):
     return render(request, 'salud/shop-single.html')
+
+
+def shop(request):
+    return render(request, 'salud/shop.html')
+
+
+# class ProductDetailView(generic.DetailView):
+#     model = Product
+#     template_name = 'salud/shop-single.html'
+#     context_object_name = 'product'
+
+
+class ProductCreateView(generic.CreateView):
+    model = Product
+    form_class = ProductForm
+    template_name = 'product/product_create.html'
+    success_url = '/shop/'
+
+
+class ProductUpdateView(generic.UpdateView):
+    model = Product
+    form_class = ProductForm
+    template_name = 'product/product_update.html'
+    success_url = '/shop/'
+
+
+class ProductDeleteView(generic.DeleteView):
+    model = Product
+    template_name = 'product/product_delete.html'
+    success_url = '/shop/'
 
 
 def shop(request):

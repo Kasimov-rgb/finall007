@@ -71,114 +71,147 @@
 <!--=========== Breadcumd Section End ========= -->
 
 <!--=========== Shop Cart Section Here ========= -->
- <section class="cart__section pt-80 pb-80">
+<!-- templates/shopping-cart.html -->
+<section class="cart-area">
     <div class="container">
-        <div class="main__cart__wrap">
-            <div class="row wow fadeInDown"data-wow-duration="4s">
-                <div class="col-12">
-                    <div class="cart__wrapper">
-                        <div class="cart-items-wrapper">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                        <th>Remove</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="cart-item">
-                                        <td class="cart-item-info">
-                                            <img src="../../static/assets/img/product/cart/c1.jpg" alt="Image">
-                                        </td>
-                                        <td class="cart-item-price">
-                                            $ <span class="base-price">195.00</span>
-                                        </td>
-                                        <td>
-                                            <div class="cart-item-quantity">
-                                                <span class="cart-item-quantity-amount"></span>
-                                                <div class="cart-item-quantity-controller">
-                                                    <a href="javascript:void(0)" class="cart-increment">
-                                                        <i class="fa-solid fa-caret-down"></i>
-                                                </a>
-                                                    <a href="#0" class="cart-decrement">
-                                                        <i class="fa-solid fa-caret-down"></i>
-                                                </a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="cart-item-price">
-                                            $ <span class="total-price"></span>
-                                        </td>
-                                        <td class="cart-item-remove">
-                                            <a href="#0">
-                                             <i class="fa-solid fa-xmark"></i>
-                                           </a>
-                                        </td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="cart__wrapper-footer">
-                            <form action="cart.html">
-                                <input type="text" name="promo-code" id="promoCode" placeholder="Promo code">
-                                <button type="submit" class="cmn--btn">
-                          <span>
-                                Apply Code
-                          </span>
-                          </button>
-                            </form>
-                            <a href="cart.html" class="cmn--btn">
-                          <span>
-                             Update Cart
-                          </span>
-                       </a>
-                      </div>
-                    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-outer">
+                    <table class="cart-table">
+                        <thead class="cart-header">
+                            <tr>
+                                <th class="prod-column">Products</th>
+                                <th>Quantity</th>
+                                <th class="availability">Availability</th>
+                                <th class="price">Price</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in basket.items_cart.all %}
+                            <tr>
+                                <td class="prod-column">
+                                    <div class="column-box">
+                                        <div class="prod-thumb">
+                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}">
+                                        </div>
+                                        <div class="title">
+                                            <h3 class="prod-title">{{ item.product.title }}</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="qty">
+                                    <form action="{% url 'minus_quantity' item.id %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit">-</button>
+                                    </form>
+                                    {{ item.quantity }}
+                                    <form action="{% url 'plus_quantity' item.id %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit">+</button>
+                                    </form>
+                                </td>
+                                <td class="availability">
+                                    <div class="available-info">
+                                        <span class="icon fa fa-check"></span> Available Now
+                                    </div>
+                                </td>
+                                <td class="price">${{ item.product.price }}</td>
+                                <td class="sub-total">${{ item.get_subtotal_sum }}</td>
+                                <td>
+                                    <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="row wow fadeInUp"data-wow-duration="3s">
-                <div class="col-lg-6"></div>
-                <div class="col-xl-6">
-                    <div class="cart__pragh__box">
-                        <div class="cart__graph">
-                            <h4>Cart Total</h4>
-                            <ul>
-                                <li>
-                                    <span>Subtotal</span>
-                                    <span>$320.00</span>
-                                </li>
-                                <li>
-                                    <span>Shipping</span>
-                                    <span>$10</span>
-                                </li>
-                                <li>
-                                    <span>Total</span>
-                                    <span>$320.00</span>
-                                </li>
-                            </ul>
-                            <div class="chck">
-                                <a href="checkout.html" class="cmn--btn">
-                          <span>
-                             Checkout
-                          </span>
-                       </a>
+        </div>
+        <div class="row cart-middle">
+            <div class="col-md-6 col-sm-8 col-xs-12">
+                <div class="apply-coupon">
+                    <!-- Apply Coupon form -->
+                    <form action="{% url 'apply_coupon' %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="coupon_code" placeholder="Enter Coupon Code...">
+                        <div class="apply-coupon-button">
+                            <button class="thm-btn bgclr-1" type="submit">Apply Coupon</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 col-xs-12">
+                <div class="update-cart pull-right">
+                    <!-- Update Cart button (potentially using AJAX) -->
+                    <button class="thm-btn bgclr-1" id="update-cart-btn" type="button">Update Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom section with Calculate Shipping, Update Totals, and Proceed to Checkout -->
+        <div class="row cart-bottom">
+            <div class="col-md-6">
+                <div class="calculate-shipping">
+                    <div class="sec-title">
+                        <h1>Calculate Shipping</h1>
+                    </div>
+                    <!-- Calculate Shipping form -->
+                    <form action="{% url 'calculate_shipping' %}" method="post">
+                        {% csrf_token %}
+                        <select class="selectmenu" name="country">
+                            <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+                            <option value="United States (USA)">United States (USA)</option>
+                            <option value="France">France</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="mar-bottom" type="text" name="state_country" placeholder="State / Country" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="zip-code" type="text" name="zip_code" placeholder="Zip Code" required>
                             </div>
                         </div>
+                        <button class="thm-btn bgclr-1" type="submit">Update Totals</button>
+                    </form>
+                </div>
+            </div> 
+            <!-- Cart Total section -->
+            <div class="col-lg-6 col-md-6">
+                <div class="cart-total">
+                    <div class="sec-title">
+                        <h1>Cart Totals</h1>
                     </div>
+                    <ul class="cart-total-table">
+                        <li class="clearfix">
+                            <span class="col col-title">Cart Subtotal</span>
+                            <span class="col">${{ basket.get_total_sum }}</span>
+                        </li>
+                        <li class="clearfix">
+                            <span class="col col-title">Shipping and Handling</span>
+                            <span class="col">${{ shipping_cost }} - <b>Calculate Shipping</b></span>
+                        </li>
+                        <li class="clearfix">
+                            <span class="col col-title">Order Total</span>
+                            <span class="col">${{ basket.get_total_sum|add:shipping_cost }}</span>
+                        </li>
+                    </ul>
+                    <!-- Proceed to Checkout button -->
+                    <a href="{% url 'checkout' %}" class="thm-btn bgclr-1 checkout-btn">Proceed to Checkout</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--cart Section-->
+
 <!--=========== Shop Cart Section End ========= -->
 
-<!--=========== Newsletter Section Here ========= -->
-<section class="newsletter__section">
+<!-- =========== Newsletter Section Here ========= -->
+<!-- <section class="newsletter__section"> -->
     <div class="container">
         <div class="newsletter__wrapper">
             <div class="row justify-content-center">
@@ -205,7 +238,7 @@
             </div>
         </div>
     </div>
-</section>
+<!-- </section> -->
 <!--=========== Newsletter Section End ========= -->
 
 <!--=========== Footer Section Here ========= -->

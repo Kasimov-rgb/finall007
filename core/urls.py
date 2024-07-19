@@ -46,6 +46,7 @@ urlpatterns = [
     path('', include('apps.courses.urls')),
     path('', CourseListView.as_view(), name='home'),
     path('', include('apps.buy.urls')),
+    path('', include('apps.users.urls')),
 
     path('docs/', docs.with_ui('swagger', cache_timeout=0), name="docs"),
 

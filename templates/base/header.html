@@ -4,7 +4,7 @@
     <div class="container">
         <div class="header-wrapper">
             <div class="logo-menu">
-{#                <a href="index.html" class="logo"> "style="text-decoration: none; list-style-type: none"#}
+{               <a href="index.html" class="logo"> "style="text-decoration: none; list-style-type: none"}
                     <img src="../../static/assets/img/logo/footer-logo.png" alt="logo">
                 </a>
 
@@ -56,9 +56,9 @@
                         <li class="subtwohober">
                             <a href="{% url 'trainer' %}">our trainner</a>
                         </li>
-                        <li class="subtwohober">
+                        <!-- <li class="subtwohober">
                             <a href="{% url 'trainner_details' %}">tarinner details</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li>
@@ -75,19 +75,47 @@
                             <a href="{% url 'shop_single' %}">single product</a>
                         </li>
                         <li class="subtwohober">
-                            <a href="{% url 'shop-cart' %}">cart page</a>
+                            <a href="{% url 'basket' %}">cart page</a>
                         </li>
-                        <li class="subtwohober">
+                        <!-- <li class="subtwohober">
                             <a href="{% url 'checkout' %}">checkout</a>
-                        </li>
+                        </li> -->
 {#                        <li class="subtwohober">#}
 {#                            <a href="{% url 'successful' %}">successful</a>#}
 {#                        </li>#}
-                        <li class="subtwohober">
+                        <!-- <li class="subtwohober">
 
                             <a href="{% url 'testimonial' %}">Testimonial</a>
-                        </li>
+                        </li> -->
                     </ul>
+                    {% if not user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'register' %}">
+                            Регистрация
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="subtwohober">
+                                <a href="{% url 'login' %}">Войти</a>
+                            </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li>
+                        <ul class="sub-menu"></ul>
+                        <li class="subtwohober">
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Выход</button>
+                        </form>
+                    </li>
+                    </li>
+                {% endif %}
+                
+
+                    </ul>
+                    </li>
+
                 </li>
                 <li>
 

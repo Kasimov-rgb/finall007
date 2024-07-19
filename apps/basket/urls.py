@@ -1,14 +1,21 @@
 from django.urls import path
-from apps.basket.views import BasketDetailView, QuantityChangeLogics
-from apps.basket.views import add_to_favorite, remove_from_favorite, BasketListView
+from .views import (
+    CartListView,
+    MinusQuantityView,
+    PlusQuantityView,
+    AddToCartView,
+    RemoveFromCartView,
+)
+from . import views
 
 urlpatterns = [
-    path('basket/', BasketDetailView.as_view(), name='cart'),
-    path('minus/<int:pk>', QuantityChangeLogics.minus_quantity, name='minus_quantity'),
-    path('plus/<int:pk>', QuantityChangeLogics.plus_quantity, name='plus_quantity'),
-
-    path('product/<int:product_id>/add-to-favorite/', add_to_favorite, name='add_to_favorite'),
-    path('favorite/<int:favorite_id>/remove/', remove_from_favorite, name='remove_from_favorite'),
-
-    path('shop-cart/', BasketListView.as_view(), name='shop-cart'),
+    path('cart/', CartListView.as_view(), name='basket'),
+    path('minus/<int:pk>/', MinusQuantityView.as_view(), name='minus_quantity'),
+    path('plus/<int:pk>/', PlusQuantityView.as_view(), name='plus_quantity'),
+    path('product/<int:product_id>/add-to-cart/', AddToCartView.as_view(), name='add_to_cart'),
+    path('cart/<int:pk>/remove/', RemoveFromCartView.as_view(), name='remove_from_cart'),
+    path('apply-coupon/', views.apply_coupon, name='apply_coupon'),
+    path('calculate-shipping/', views.calculate_shipping, name='calculate_shipping'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('update-cart/', views.update_cart, name='update_cart'),
 ]

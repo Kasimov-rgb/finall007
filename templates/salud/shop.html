@@ -12,27 +12,27 @@
    <!--Favicon img-->
    <link rel="shortcut icon" href="{% static '/assets/img/favicon/favicon.png' %}">
    <!--Bootstarp min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/bootstrap.min.css' %}">
    <!--Bootstarp map css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/bootstrap.css.map' %}">
    <!--Odometer css-->
-   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/odometer.css' %}">
    <!--Owl Carousel css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/owl.min.css' %}">
    <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.theme.default.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/owl.theme.default.min.css' %}">
    <!--All min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/all.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/all.min.css' %}">
    <!--Animate css-->
-   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/animate.css' %}">
    <!--Popup css-->
-   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/magnific-popup.css' %}">
    <!--Swiper min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/swiper-bundle.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/swiper-bundle.min.css' %}">
    <!--Owl Nice select css-->
-   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/nice-select.css' %}">
    <!--main css-->
-   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/main.css' %}">
 </head>
 <body>
 
@@ -77,8 +77,13 @@
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="row g-4">
+                    {% if user.is_authenticated and user.is_staff %}
+                    <div class="col-12 text-right mb-3">
+                        <a href="{% url 'product_create' %}" class="btn btn-success">Create Product</a>
+                    </div>
+                    {% endif %}
                     {% for tovar in products %}
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown"data-wow-delay="0.3s">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown" data-wow-delay="0.3s">
                         <div class="product__items style__shop">
                             <div class="product__thumb">
                                 <img src="{{ tovar.image_for_product.url }}" alt="product__image">
@@ -100,7 +105,7 @@
                                         {{ tovar.title }}
                                     </a>
                                 </h5>
-                                  <div class="product__price d-flex align-items-center justify-content-center">
+                                <div class="product__price d-flex align-items-center justify-content-center">
                                     <del>
                                         {{ tovar.price }}
                                     </del>
@@ -118,143 +123,81 @@
                             </div>
                             <div class="product__btn center">
                                 <a href="shop-single.html" class="cmn--button">
-                                   Add to Cart
+                                    Add to Cart
                                 </a>
                             </div>
+                            {% if user.is_authenticated and user.is_staff %}
+                            <div class="admin-buttons">
+                                <a href="{% url 'product_update' tovar.pk %}" class="btn btn-primary">Edit</a>
+                                <a href="{% url 'product_delete' tovar.pk %}" class="btn btn-danger">Delete</a>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
                 </div>
-{#                <ul class="default__pagination pt-40 wow fadeInUp"data-wow-duration="3s">#}
-                    <li>
-{#                       <a href="#"><i class="fa-solid fa-angle-left"></i></a>#}
-                    </li>
-                    <li>
-{#                       <a href="#">1</a>#}
-                    </li>
-                    <li>
-{#                       <a href="#">2</a>#}
-                    </li>
-                    <li>
-{#                       <a href="#">3</a>/#}
-                    </li>
-                       <li>
-{#                          <a href="#">4</a>#}
-                    </li>
-                    <li>
-{#                       <a href="#">5</a>#}
-                       </li>
-                    <li>
-                       <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-                    </li>
-                </ul>
             </div>
             <div class="col-lg-4">
                 <div class="sidebar__right">
-                    <div class="widget__tittle mb-3 wow fadeInUp"data-wow-duration="3s">
+                    <div class="widget__tittle mb-3 wow fadeInUp" data-wow-duration="3s">
                         <h5>Search</h5>
                     </div>
-                    <div class="sidebar__widget style__border wow fadeInDown"data-wow-duration="3s">
+                    <div class="sidebar__widget style__border wow fadeInDown" data-wow-duration="3s">
                         <form action="#0">
                             <input type="text" placeholder="Search">
                             <button>
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                         </form>
+                        </form>
                     </div>
-                    <div class="widget__tittle mb-3 wow fadeInUp"data-wow-duration="3s">
-                        <h5>categories</h5>
+                    <div class="widget__tittle mb-3 wow fadeInDown" data-wow-duration="3s">
+                        <h5>Categories</h5>
                     </div>
-                    <div class="sidebar__widget style__border wow fadeInRight"data-wow-duration="3s">
+                    <div class="sidebar__widget style__border wow fadeInRight" data-wow-duration="3s">
                         <ul class="category__list">
+                            {% for category in categories %}
                             <li>
-                                <a href="#" class="d-flex flex-wrap justify-content-between"><span>FITNESS</span><span>( 27 )</span></a>
+                                <a href="{% url 'category_detail' pk=category.pk %}" class="d-flex flex-wrap justify-content-between">
+                                    <span>{{ category.title }}</span>
+                                    <span>({{ category.products.count }})</span>
+                                </a>
                             </li>
-                            <li>
-                                <a href="#" class="d-flex flex-wrap justify-content-between"><span>HEALTH</span><span>( 05 )</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex flex-wrap justify-content-between"><span>LIFESTYLE</span><span>( 01 )</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex flex-wrap justify-content-between"><span>NUTRITION</span><span>( 03 )</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex flex-wrap justify-content-between"><span>SPORT SCIENCE</span><span>( 11 )</span></a>
-                            </li>
-                            <li class="bb-none"> 
-                                <a href="#" class="d-flex flex-wrap justify-content-between"><span>TRAINING PROGRAM</span><span>( 03 )</span></a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
-                    <div class="widget__tittle mb-3 wow fadeInDown"data-wow-duration="3s">
-                        <h5>Pricing Scale</h5>
-                    </div>
-                    <div class="sidebar__widget style__border wow fadeInUp"data-wow-duration="3s">
-                        <div class="pricing__bar">
-                            <div class="range-slider">
-                               <input value="6000" min="100" max="50000" step="500" type="range">
-                               <input value="44500" min="1000" max="50000" step="500" type="range">
-                               <span class="rangeValues">$6100 - $44500</span>
-                            </div>
-                         </div>
-                    </div>
-                    <div class="widget__tittle mb-3 wow fadeInDown"data-wow-duration="3s">
-                        <h5>Recent posts</h5>
+                    <div class="widget__tittle mb-3 wow fadeInDown" data-wow-duration="3s">
                     </div>
                     <div class="sidebar__widget style__border">
                         <div class="recent__wrap">
                             <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="3s">
-                               <span class="thumb">
-                                  <img src="../../static/assets/img/event/details/recent/r1.jpg" alt="img">
-                               </span>
-                               <div class="recent__content">
-                                  <h6>
-                                    Meal Prep For A Full Week Easy
-                                  </h6>
-                                  <p>27.05.2023</p>
-                               </div>
+                                <span class="thumb">
+                                </span>
+                                <div class="recent__content">
+                                    <h6>Meal Prep For A Full Week Easy</h6>
+                                    <p>27.05.2023</p>
+                                </div>
                             </a>
                             <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="5s">
                                 <span class="thumb">
-                                   <img src="../../static/assets/img/event/details/recent/r2.jpg" alt="img">
                                 </span>
                                 <div class="recent__content">
-                                    <h6>
-                                        Off Season Is Finnish Now What?
-                                     </h6>
-                                     <p>27.05.2023</p>
+                                    <h6>Off Season Is Finnish Now What?</h6>
+                                    <p>27.05.2023</p>
                                 </div>
-                             </a>
-                             <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="7s">
+                            </a>
+                            <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="7s">
                                 <span class="thumb">
-                                   <img src="../../static/assets/img/event/details/recent/r3.jpg" alt="img">
                                 </span>
                                 <div class="recent__content">
-                                    <h6>
-                                        Fitness Helps You Think & Feel Better.
-                                     </h6>
-                                     <p>27.05.2023</p>
+                                    <h6>Fitness Helps You Think & Feel Better.</h6>
+                                    <p>27.05.2023</p>
                                 </div>
-                             </a>
-                         </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="widget__tittle mb-3 wow fadeInDown"data-wow-duration="3s">
-                        <h5>tags</h5>
+                    <div class="widget__tittle mb-3 wow fadeInDown" data-wow-duration="3s">
                     </div>
-                    <div class="sidebar__widget wow fadeInUp"data-wow-duration="3s">
-                        <ul class="tag__list">
-                            <li><a href="#">Fitness</a></li>
-                            <li><a href="#">People</a></li>
-                            <li><a href="#">Health</a></li>
-                            <li><a href="#">City</a></li>
-                            <li><a href="#">Testing</a></li>
-                            <li><a href="#">Video</a></li>
-                            <li><a href="#">Music</a></li>
-                            <li><a href="#">Life Style</a></li>
-                            <li><a href="#">Culture</a></li>
-                            <li><a href="#">Mobile</a></li>
-                        </ul>
+                    <div class="sidebar__widget wow fadeInUp" data-wow-duration="3s">
                     </div>
                 </div>
             </div>
@@ -264,7 +207,7 @@
 <!--==== Product Section End ======= -->
 
 <!--=========== Newsletter Section Here ========= -->
-{#<section class="newsletter__section">#}
+<!-- {#<section class="newsletter__section">#} -->
 {#    <div class="container">#}
 {#        <div class="newsletter__wrapper">#}
             <div class="row justify-content-center">
@@ -272,17 +215,17 @@
 {#                    <div class="newsletter__content wow fadeInUp" data-wow-duration="2s">#}
                         <div class="section__header section__center">
                             <h2>
-{#                                Subscribe Here#}
+<!-- {#                                Subscribe Here#} -->
                             </h2>
                             <p>
-{#                                Subscribe to get notified about new templates and updates#}
+<!-- {#                                Subscribe to get notified about new templates and updates#} -->
                             </p>
                         </div>
                         <form action="#">
 {#                            <input type="email" placeholder="Enter your email address">#}
 {#                            <button class="cmn--btn" type="submit">#}
 {#                                <span>#}
-{#                                  Subscribe#}
+<!-- {#                                  Subscribe#} -->
 {#                                </span>#}
 {#                            </button>#}
                         </form>

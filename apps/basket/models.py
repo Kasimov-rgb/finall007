@@ -1,13 +1,8 @@
 from django.db import models
-
-from django.conf import settings
-
-
-from apps.products.models import Product
 from django.contrib.auth import get_user_model
+from apps.products.models import Product
 
 User = get_user_model()
-
 
 class Basket(models.Model):
     user = models.OneToOneField(
@@ -20,7 +15,7 @@ class Basket(models.Model):
         return f"{self.user}"
 
     def get_total_sum(self):
-        return sum(i.get_subtotal_sum() for i in self.items_basket.all())
+        return sum(i.get_subtotal_sum() for i in self.items_cart.all())
 
     class Meta:
         verbose_name = 'Корзина'
@@ -31,7 +26,7 @@ class Item(models.Model):
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
-        related_name='basket_item',
+        related_name='cart_item',
         verbose_name='Продукт'
     )
     quantity = models.PositiveIntegerField(
@@ -40,7 +35,7 @@ class Item(models.Model):
     )
     basket = models.ForeignKey(
         Basket, on_delete=models.CASCADE,
-        related_name='items_basket',
+        related_name='items_cart',
         verbose_name='Корзина'
     )
 
@@ -51,11 +46,17 @@ class Item(models.Model):
         return f"{self.product.title}"
 
     class Meta:
-        verbose_name = 'Элемент корзина'
-        verbose_name_plural = 'Элемент корзины'
+        verbose_name = 'Элемент корзины'
+        verbose_name_plural = 'Элементы корзины'
 
 
 class Favorite(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.user} - {self.product}"
+
+    class Meta:
+        verbose_name = 'Избранное'
+        verbose_name_plural = 'Избранные'

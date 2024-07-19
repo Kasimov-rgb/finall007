@@ -1,27 +1,26 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-
 from django import forms
-
-from apps.users.models import CustomUser
-
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from .models import CustomUser
 
 
-class UserFrom(forms.ModelForm):
+class CustomAuthenticationForm(AuthenticationForm):
+    def confirm_login_allowed(self, user):
+        if not user.is_active:
+            raise forms.ValidationError(
+                "This account is inactive.",
+                code='inactive',
+            )
+
+
+class CustomUserRegisterForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
     class Meta:
         model = CustomUser
-        fields = ['username', 'display_name', 'avatar', 'password', 'email']
+        fields = ['username', 'email', 'password1', 'password2']
 
-
-class UserUpdateForm(UserChangeForm):
-    class Meta:
-        model = CustomUser
-        fields = [
-            'username',
-            'display_name',
-            'avatar'
-        ]
-
-
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if CustomUser.objects.filter(username=username).exists():
+            raise forms.ValidationError("Username is already taken.")
+        return username

@@ -1,0 +1,17 @@
+<!-- {% extends 'base/base.html' %}
+{% block content %}
+<h2>Delete Trainer</h2>
+<p>Are you sure you want to delete "{{ trainer.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+</form>
+{% endblock %} -->
+
+
+<h2>Delete Trainer</h2>
+<p>Are you sure you want to delete "{{ trainer.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+</form>

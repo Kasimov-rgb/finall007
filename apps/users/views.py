@@ -1,50 +1,56 @@
-from django.views.generic import CreateView, UpdateView
-from django.urls import reverse_lazy
-from django.contrib.auth import get_user_model
 
-from apps.users.forms import UserFrom, UserUpdateForm
 
+from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
-
-from django.views import View
-
-User = get_user_model()
-
-
-class SignUpView(CreateView):
-    model = User
-    form_class = UserFrom
-    success_url = reverse_lazy('login')
-    template_name = 'auth/signup.html'
+from django.contrib import messages
+from django.contrib.auth.views import LoginView
+from django.db import IntegrityError
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth import logout
 
 
-def login_logics(request):
-    return render(request, 'auth/login.html', locals())
+from .forms import CustomAuthenticationForm
+from .forms import CustomUserRegisterForm
 
 
-class UserSignUpView(View):
-    def post(self, request):
-        form = UserFrom(request.POST)
+class CustomLogoutView(LogoutView):
+    def dispatch(self, request, *args, **kwargs):
+        logout(request)
+        messages.success(request, 'You have successfully logged out.')
+        return redirect('/')
+
+
+class CustomLoginView(LoginView):
+    template_name = 'user/register.html'
+    authentication_form = CustomAuthenticationForm
+
+    def form_valid(self, form):
+        # This method is called when form is valid
+        login(self.request, form.get_user())
+        messages.success(self.request, 'You have successfully logged in.')
+        return redirect('/')
+
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            print("Удачно")
-        return redirect('login')
+            try:
+                user = form.save()
+                login(request, user)
+                messages.success(request, 'Registration successful.')
+                return redirect('../../')
+            except IntegrityError:
+                form.add_error('username', 'Username is already taken.')
+        else:
+            messages.error(request, 'Registration failed. Please correct the errors below.')
+    else:
+        form = CustomUserRegisterForm()
 
-    def get(self, request):
-        form = UserFrom()
-        return render(request, 'auth/signup.html', {"form": form})
-
-
-
-
-
-
-
-
-
-
-
-
+    context = {
+        'form': form
+    }
+    return render(request, 'user/register.html', context)
 
 
 

@@ -15,7 +15,7 @@ class Product(models.Model):
         max_length=50,
         verbose_name="Название",
     )
-    c = RichTextField(
+    description = RichTextField(
         verbose_name="Описание",
     )
     image_for_product = models.ImageField(

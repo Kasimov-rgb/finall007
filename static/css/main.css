@@ -448,7 +448,7 @@ p {
 /*========== About Section End ==========*/
 /*========== Footer Scetion Start ==========*/
 .footer__section {
-  background: url(../img/footer/bg.jpg) no-repeat center center;
+  background: url(../assets/img/footer/bg.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -1021,7 +1021,7 @@ input.main-search-input::placeholder {
 }
 
 .banner__image {
-  background: url(../img/banner/banner1.jpg) no-repeat center center;
+  background: url(../assets/img/banner/banner1.jpg) no-repeat center center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1107,46 +1107,46 @@ input.main-search-input::placeholder {
 }
 
 .imagetwo {
-  background: url(../img/banner/banner2.jpg) no-repeat center center;
+  background: url(../assets/img/banner/banner2.jpg) no-repeat center center;
   background-size: cover;
 }
 
 .imagethree {
-  background: url(../img/banner/banner3.jpg) no-repeat center center;
+  background: url(../assets/img/banner/banner3.jpg) no-repeat center center;
   background-size: cover;
 }
 
 .imagefour {
-  background: url(../img/banner/banner4.jpg) no-repeat center center;
+  background: url(../assets/img/banner/banner4.jpg) no-repeat center center;
   background-size: cover;
 }
 
 .blog__bg {
-  background: url(../img/banner/blog.jpg) no-repeat center center;
+  background: url(../assets/img/banner/blog.jpg) no-repeat center center;
   background-size: cover;
   padding: 150px 0;
 }
 
 .trainer__bg {
-  background: url(../img/banner/trainer.jpg) no-repeat center center;
+  background: url(../assets/img/banner/trainer.jpg) no-repeat center center;
   background-size: cover;
   padding: 150px 0;
 }
 
 .event__bg {
-  background: url(../img/banner/event.jpg) no-repeat center center;
+  background: url(../assets/img/banner/event.jpg) no-repeat center center;
   background-size: cover;
   padding: 150px 0;
 }
 
 .classes__bg {
-  background: url(../img/banner/event.jpg) no-repeat center center;
+  background: url(../assets/img/banner/event.jpg) no-repeat center center;
   background-size: cover;
   padding: 150px 0;
 }
 
 .about__bg {
-  background: url(../img/banner/bg.jpg) no-repeat center center;
+  background: url(../assets/img/banner/bg.jpg) no-repeat center center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1336,7 +1336,7 @@ input.main-search-input::placeholder {
   z-index: 1;
 }
 .video__section .video__wrap {
-  background: url(../img/video/bg.jpg) no-repeat center center;
+  background: url(../assets/img/video/bg.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   padding: 250px 0;
@@ -1813,7 +1813,7 @@ input.main-search-input::placeholder {
 }
 
 .style__two {
-  background: url(../img/testimonial/bg.jpg) no-repeat center center;
+  background: url(../assets/img/testimonial/bg.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -1993,7 +1993,7 @@ input.main-search-input::placeholder {
 /*========== Promotion Section Start ==========*/
 .promotion__section {
   overflow: hidden;
-  background: url(../img/promotion/bg.jpg) no-repeat center center;
+  background: url(../assets/img/promotion/bg.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   padding: 120px 0;
@@ -2032,7 +2032,7 @@ input.main-search-input::placeholder {
 }
 
 .newsletter__wrapper {
-  background: url(../img/newsletter/bg.jpg) no-repeat center center;
+  background: url(../assets/img/newsletter/bg.jpg) no-repeat center center;
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
@@ -2374,7 +2374,7 @@ input.main-search-input::placeholder {
 .counter__section {
   overflow: hidden;
   position: relative;
-  background: url(../img/counter/bg.jpg) no-repeat center;
+  background: url(../assets/img/counter/bg.jpg) no-repeat center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -2488,7 +2488,7 @@ input.main-search-input::placeholder {
 /*========== Discount Section Start ==========*/
 .discount__section {
   overflow: hidden;
-  background: url(../img/discount/bg.jpg) no-repeat center center;
+  background: url(../assets/img/discount/bg.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   padding: 120px 0;

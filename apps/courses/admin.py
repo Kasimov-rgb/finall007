@@ -12,9 +12,6 @@ class CourseAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'instructor', 'duration')
 
 
-# @admin.register(BoxingCourse)
-# class BoxingCourseAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'description', 'instructor', 'duration', 'punch_types', 'sparring_partner_required')
 
 
 @admin.register(KarateCourse)

@@ -1,0 +1,18 @@
+<!-- {% extends 'base/base.html' %}
+{% block content %}
+<h2>Create New Trainer</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Trainer</button>
+</form>
+{% endblock %} -->
+
+
+
+<h2>Create New Trainer</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Trainer</button>
+</form>
