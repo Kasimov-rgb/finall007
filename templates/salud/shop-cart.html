@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-{% load  static %}
+
+{% load static %}
 
 <html lang="en">
 <head>
@@ -9,29 +10,29 @@
    <meta name="author" content="NextGenerationDev">
    <title>Salud - Fitness & Gym HTML Template</title>
    <!--Favicon img-->
-   <link rel="shortcut icon" href="../../media/img/favicon/favicon.png ">
+   <link rel="shortcut icon" href="{% static '/assets/img/favicon/favicon.png' %}">
    <!--Bootstarp min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/bootstrap.min.css' %}">
    <!--Bootstarp map css-->
-   <link rel="stylesheet" href="{% static '/assets/css/bootstrap.css.map' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/bootstrap.css.map' %}">
    <!--Odometer css-->
-   <link rel="stylesheet" href="{% static '/assets/css/odometer.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/odometer.css' %}">
    <!--Owl Carousel css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/owl.min.css' %}">
    <!--Owl Carousel Theme css-->
-   <link rel="stylesheet" href="{% static '/assets/css/owl.theme.default.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/owl.theme.default.min.css' %}">
    <!--All min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/all.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/all.min.css' %}">
    <!--Animate css-->
-   <link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/animate.css' %}">
    <!--Popup css-->
-   <link rel="stylesheet" href="{% static '/assets/css/magnific-popup.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/magnific-popup.css' %}">
    <!--Swiper min css-->
-   <link rel="stylesheet" href="{% static '/assets/css/swiper-bundle.min.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/swiper-bundle.min.css' %}">
    <!--Owl Nice select css-->
-   <link rel="stylesheet" href="{% static '/assets/css/nice-select.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/nice-select.css' %}">
    <!--main css-->
-   <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
+   <link rel="stylesheet" href="{% static '/assets/../../static/css/main.css' %}">
 </head>
 <body>
 
@@ -71,147 +72,117 @@
 <!--=========== Breadcumd Section End ========= -->
 
 <!--=========== Shop Cart Section Here ========= -->
-<!-- templates/shopping-cart.html -->
-<section class="cart-area">
+<section class="cart__section pt-80 pb-80">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="table-outer">
-                    <table class="cart-table">
-                        <thead class="cart-header">
-                            <tr>
-                                <th class="prod-column">Products</th>
-                                <th>Quantity</th>
-                                <th class="availability">Availability</th>
-                                <th class="price">Price</th>
-                                <th>Total</th>
-                                <th>Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in basket.items_cart.all %}
-                            <tr>
-                                <td class="prod-column">
-                                    <div class="column-box">
-                                        <div class="prod-thumb">
-                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}">
-                                        </div>
-                                        <div class="title">
-                                            <h3 class="prod-title">{{ item.product.title }}</h3>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="qty">
-                                    <form action="{% url 'minus_quantity' item.id %}" method="post">
-                                        {% csrf_token %}
-                                        <button type="submit">-</button>
-                                    </form>
-                                    {{ item.quantity }}
-                                    <form action="{% url 'plus_quantity' item.id %}" method="post">
-                                        {% csrf_token %}
-                                        <button type="submit">+</button>
-                                    </form>
-                                </td>
-                                <td class="availability">
-                                    <div class="available-info">
-                                        <span class="icon fa fa-check"></span> Available Now
-                                    </div>
-                                </td>
-                                <td class="price">${{ item.product.price }}</td>
-                                <td class="sub-total">${{ item.get_subtotal_sum }}</td>
-                                <td>
-                                    <form action="{% url 'remove_from_cart' item.id %}" method="post">
-                                        {% csrf_token %}
-                                        <button type="submit">Remove</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="row cart-middle">
-            <div class="col-md-6 col-sm-8 col-xs-12">
-                <div class="apply-coupon">
-                    <!-- Apply Coupon form -->
-                    <form action="{% url 'apply_coupon' %}" method="post">
-                        {% csrf_token %}
-                        <input type="text" name="coupon_code" placeholder="Enter Coupon Code...">
-                        <div class="apply-coupon-button">
-                            <button class="thm-btn bgclr-1" type="submit">Apply Coupon</button>
+        <div class="main__cart__wrap">
+            <div class="row wow fadeInDown" data-wow-duration="4s">
+                <div class="col-12">
+                    <div class="cart__wrapper">
+                        <div class="cart-items-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Subtotal</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in cart.items_cart.all %}
+                                    <tr class="cart-item">
+                                        <td class="cart-item-info">
+                                            <img src="{{ item.product.image_for_product.url }}" alt="{{ item.product.title }}">
+                                        </td>
+                                        <td class="cart-item-price">
+                                            $ <span class="base-price">{{ item.product.price }}</span>
+                                        </td>
+                                        <td>
+                                            <form action="{% url 'minus_quantity' item.id %}" method="post" class="d-inline">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-secondary">-</button>
+                                            </form>
+                                            {{ item.quantity }}
+                                            <form action="{% url 'plus_quantity' item.id %}" method="post" class="d-inline">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-secondary">+</button>
+                                            </form>
+                                        </td>
+                                        <td class="cart-item-price">
+                                            $ <span class="total-price">{{ item.get_subtotal_sum }}</span>
+                                        </td>
+                                        <td class="cart-item-remove">
+                                            <form action="{% url 'remove_from_cart' item.id %}" method="post" class="d-inline">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="5">Your cart is empty.</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-4 col-xs-12">
-                <div class="update-cart pull-right">
-                    <!-- Update Cart button (potentially using AJAX) -->
-                    <button class="thm-btn bgclr-1" id="update-cart-btn" type="button">Update Cart</button>
-                </div>
-            </div>
-        </div>
-        <!-- Bottom section with Calculate Shipping, Update Totals, and Proceed to Checkout -->
-        <div class="row cart-bottom">
-            <div class="col-md-6">
-                <div class="calculate-shipping">
-                    <div class="sec-title">
-                        <h1>Calculate Shipping</h1>
+                        <div class="cart__wrapper-footer">
+                            <form action="{% url 'apply_coupon' %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="text" name="coupon_code" id="promoCode" placeholder="Promo code">
+                                <button type="submit" class="cmn--btn">
+                                    <span>Apply Code</span>
+                                </button>
+                            </form>
+                            <a href="{% url 'update_cart' %}" class="cmn--btn">
+                                <span>Update Cart</span>
+                            </a>
+                        </div>
                     </div>
-                    <!-- Calculate Shipping form -->
-                    <form action="{% url 'calculate_shipping' %}" method="post">
-                        {% csrf_token %}
-                        <select class="selectmenu" name="country">
-                            <option value="United Kingdom (UK)">United Kingdom (UK)</option>
-                            <option value="United States (USA)">United States (USA)</option>
-                            <option value="France">France</option>
-                            <!-- Add more options as needed -->
-                        </select>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input class="mar-bottom" type="text" name="state_country" placeholder="State / Country" required>
-                            </div>
-                            <div class="col-lg-6">
-                                <input class="zip-code" type="text" name="zip_code" placeholder="Zip Code" required>
+                </div>
+            </div>
+            <div class="row wow fadeInUp" data-wow-duration="3s">
+                <div class="col-lg-6"></div>
+                <div class="col-xl-6">
+                    <div class="cart__pragh__box">
+                        <div class="cart__graph">
+                            <h4>Cart Total</h4>
+                            <ul>
+                                <li>
+                                    <span>Subtotal</span>
+                                    <span>$ {{ cart.get_total_sum }}</span>
+                                </li>
+                                <li>
+                                    <span>Shipping</span>
+                                    <span>$ {{ shipping_cost }}</span>
+                                </li>
+                                <li>
+                                    <span>Total</span>
+                                    <span>$ {{ cart.get_total_sum|add:shipping_cost }}</span>
+                                </li>
+                            </ul>
+                            <div class="chck">
+                                <a href="{% url 'checkout' %}" class="cmn--btn">
+                                    <span>Checkout</span>
+                                </a>
                             </div>
                         </div>
-                        <button class="thm-btn bgclr-1" type="submit">Update Totals</button>
-                    </form>
-                </div>
-            </div> 
-            <!-- Cart Total section -->
-            <div class="col-lg-6 col-md-6">
-                <div class="cart-total">
-                    <div class="sec-title">
-                        <h1>Cart Totals</h1>
                     </div>
-                    <ul class="cart-total-table">
-                        <li class="clearfix">
-                            <span class="col col-title">Cart Subtotal</span>
-                            <span class="col">${{ basket.get_total_sum }}</span>
-                        </li>
-                        <li class="clearfix">
-                            <span class="col col-title">Shipping and Handling</span>
-                            <span class="col">${{ shipping_cost }} - <b>Calculate Shipping</b></span>
-                        </li>
-                        <li class="clearfix">
-                            <span class="col col-title">Order Total</span>
-                            <span class="col">${{ basket.get_total_sum|add:shipping_cost }}</span>
-                        </li>
-                    </ul>
-                    <!-- Proceed to Checkout button -->
-                    <a href="{% url 'checkout' %}" class="thm-btn bgclr-1 checkout-btn">Proceed to Checkout</a>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 </section>
 
+
+<!--cart Section-->
 <!--=========== Shop Cart Section End ========= -->
 
-<!-- =========== Newsletter Section Here ========= -->
-<!-- <section class="newsletter__section"> -->
+<!--=========== Newsletter Section Here ========= -->
+<section class="newsletter__section">
     <div class="container">
         <div class="newsletter__wrapper">
             <div class="row justify-content-center">
@@ -238,7 +209,7 @@
             </div>
         </div>
     </div>
-<!-- </section> -->
+</section>
 <!--=========== Newsletter Section End ========= -->
 
 <!--=========== Footer Section Here ========= -->
@@ -267,6 +238,6 @@
    <!--Swiper min Js-->
    <script src="{% static '/assets/js/swiper-bundle.min.js' %}"></script>
    <!--main Js-->
-   <script src="{%  static '/assets/js/main.js' %}"></script>
+   <script src="{% static '/assets/js/main.js' %}"></script>
 </body>
 </html>

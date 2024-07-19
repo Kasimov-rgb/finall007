@@ -1,13 +1,20 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+
+from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+
+
 from apps.products.models import Product
+from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-class Basket(models.Model):
+
+class Cart(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE,
-        related_name='basket',
+        related_name='cart',
         verbose_name='Пользователь'
     )
 
@@ -33,8 +40,8 @@ class Item(models.Model):
         default=1,
         verbose_name='Количество',
     )
-    basket = models.ForeignKey(
-        Basket, on_delete=models.CASCADE,
+    cart = models.ForeignKey(
+        Cart, on_delete=models.CASCADE,
         related_name='items_cart',
         verbose_name='Корзина'
     )
@@ -46,17 +53,10 @@ class Item(models.Model):
         return f"{self.product.title}"
 
     class Meta:
-        verbose_name = 'Элемент корзины'
-        verbose_name_plural = 'Элементы корзины'
+        verbose_name = 'Элемент корзина'
+        verbose_name_plural = 'Элемент корзины'
 
 
 class Favorite(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.user} - {self.product}"
-
-    class Meta:
-        verbose_name = 'Избранное'
-        verbose_name_plural = 'Избранные'

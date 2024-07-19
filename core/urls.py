@@ -15,7 +15,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 api_urlpatterns = [
     #
-    path('basket/', include('apps.basket.api.urls')),
+    # path('basket/', include('apps.cart.api.urls')),
     path('buy/', include('apps.buy.api.urls')),
     path('categories/', include('apps.categories.api.urls')),
     path('course/', include('apps.courses.api.urls')),
@@ -37,7 +37,7 @@ urlpatterns = [
     path('', include('apps.products.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('', include('apps.reviews.urls')),
-    path('', include('apps.basket.urls')),
+    path('', include('apps.cart.urls')),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('', include('apps.tags.urls')),

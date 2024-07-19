@@ -38,7 +38,7 @@ PROJECT_APPS = [
     'apps.products',
     'apps.users',
     'apps.reviews',
-    'apps.basket',
+    'apps.cart',
     'apps.likes',
     'apps.tags',
     'apps.trainer',

@@ -1,5 +1,5 @@
 from django import forms
-from apps.basket.models import Favorite
+from apps.cart.models import Favorite
 
 from .models import Item
 

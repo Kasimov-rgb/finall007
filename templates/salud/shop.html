@@ -86,7 +86,7 @@
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow fadeInDown" data-wow-delay="0.3s">
                         <div class="product__items style__shop">
                             <div class="product__thumb">
-                                <img src="{{ tovar.image_for_product.url }}" alt="product__image">
+                                <img src="{{ tovar.image_for_product.url }}" alt="{{ tovar.title }}">
                                 <ul class="product__icon d-flex justify-content-center">
                                     <li>
                                         <a href="#0"><i class="fa-regular fa-eye"></i></a>
@@ -101,17 +101,11 @@
                             </div>
                             <div class="product__content center">
                                 <h5>
-                                    <a href="#0">
-                                        {{ tovar.title }}
-                                    </a>
+                                    <a href="#0">{{ tovar.title }}</a>
                                 </h5>
                                 <div class="product__price d-flex align-items-center justify-content-center">
-                                    <del>
-                                        {{ tovar.price }}
-                                    </del>
-                                    <h6>
-                                        {{ tovar.price }}
-                                    </h6>
+                                    <del>{{ tovar.price }}</del>
+                                    <h6>{{ tovar.price }}</h6>
                                 </div>
                                 <ul>
                                     <li><i class="fa-solid fa-star"></i></li>
@@ -122,9 +116,12 @@
                                 </ul>
                             </div>
                             <div class="product__btn center">
-                                <a href="shop-single.html" class="cmn--button">
-                                    Add to Cart
-                                </a>
+                                <form action="{% url 'add_to_cart' tovar.pk %}" method="post">
+                                    {% csrf_token %}
+                                    <!-- Assuming AddToCartForm includes quantity field -->
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control mb-2" required>
+                                    <button class="thm-btn bgclr-1 addtocart" type="submit">Add to Cart</button>
+                                </form>
                             </div>
                             {% if user.is_authenticated and user.is_staff %}
                             <div class="admin-buttons">
@@ -170,24 +167,21 @@
                     <div class="sidebar__widget style__border">
                         <div class="recent__wrap">
                             <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="3s">
-                                <span class="thumb">
-                                </span>
+                                <span class="thumb"></span>
                                 <div class="recent__content">
                                     <h6>Meal Prep For A Full Week Easy</h6>
                                     <p>27.05.2023</p>
                                 </div>
                             </a>
                             <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="5s">
-                                <span class="thumb">
-                                </span>
+                                <span class="thumb"></span>
                                 <div class="recent__content">
                                     <h6>Off Season Is Finnish Now What?</h6>
                                     <p>27.05.2023</p>
                                 </div>
                             </a>
                             <a href="event-details.html" class="recent__items wow fadeInUp" data-wow-duration="7s">
-                                <span class="thumb">
-                                </span>
+                                <span class="thumb"></span>
                                 <div class="recent__content">
                                     <h6>Fitness Helps You Think & Feel Better.</h6>
                                     <p>27.05.2023</p>
@@ -204,6 +198,7 @@
         </div>
     </div>
 </section>
+
 <!--==== Product Section End ======= -->
 
 <!--=========== Newsletter Section Here ========= -->
